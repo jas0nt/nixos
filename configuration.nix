@@ -50,9 +50,17 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime
+    ];
+  };
+
   fonts = {
     enableDefaultFonts = true;
     fonts = with pkgs; [ 
+      wqy_zenhei
       nerdfonts
       noto-fonts
       noto-fonts-cjk
