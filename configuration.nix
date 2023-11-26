@@ -60,12 +60,13 @@
   fonts = {
     enableDefaultFonts = true;
     fonts = with pkgs; [ 
-      wqy_zenhei
+      wqy_zenhei  #steam
       nerdfonts
       noto-fonts
       noto-fonts-cjk
       noto-fonts-cjk-sans
       noto-fonts-emoji
+      source-code-pro
     ];
   
     fontconfig = {
@@ -78,17 +79,31 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  # Configure keymap in X11
   services.xserver = {
+    enable = true;
+
+    # Configure keymap in X11
     layout = "us";
     xkbVariant = "";
+
+    displayManager = {
+        sddm.enable = true;
+        defaultSession = "none+awesome";
+    };
+
+    windowManager.awesome = {
+      enable = true;
+      luaModules = with pkgs.luaPackages; [
+        luarocks # is the package manager for Lua modules
+        luadbi-mysql # Database abstraction layer
+      ];
+
+    };
   };
+
+  # Enable the KDE Plasma Desktop Environment.
+  #services.xserver.displayManager.sddm.enable = true;
+  #services.xserver.desktopManager.plasma5.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -130,6 +145,8 @@
       qq
       spotify
       vlc
+      rofi
+      volumeicon
     ];
   };
 
@@ -155,6 +172,7 @@
     ripgrep
     clash
     starship
+    picom
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -168,7 +186,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
