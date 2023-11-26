@@ -146,7 +146,8 @@
       spotify
       vlc
       rofi
-      volumeicon
+      pasystray
+      pulsemixer
     ];
   };
 
