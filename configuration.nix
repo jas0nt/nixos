@@ -42,7 +42,26 @@
     LC_NUMERIC = "zh_CN.UTF-8";
     LC_PAPER = "zh_CN.UTF-8";
     LC_TELEPHONE = "zh_CN.UTF-8";
-    LC_TIME = "zh_CN.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [ 
+      nerdfonts
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+    ];
+  
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Noto Sans CJK" ];
+        sansSerif = [ "Noto Sans CJK" ];
+        monospace = [ "Noto Sans CJK" ];
+      };
+    };
   };
 
   # Enable the X11 windowing system.
@@ -88,6 +107,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       emacs
+      vscode
       alacritty
       wpsoffice
       steam
@@ -107,10 +127,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    nerdfonts
     git
-    microsoft-edge
     firefox
+    microsoft-edge
     htop
     vim
     wget
