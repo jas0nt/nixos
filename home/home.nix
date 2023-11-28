@@ -11,6 +11,7 @@
         isNormalUser = true;
         description = "jason";
         extraGroups = [ "networkmanager" "wheel" ];
+        shell = pkgs.fish;
     };
 
     home-manager.useGlobalPkgs = true;
@@ -29,6 +30,7 @@
             pkgs.rofi
             pkgs.pasystray
             pkgs.pulsemixer
+            pkgs.python3
         ];
 
         programs.git = {

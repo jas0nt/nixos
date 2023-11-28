@@ -131,28 +131,6 @@
 
   programs.fish.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.jason = {
-    isNormalUser = true;
-    description = "jason";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
-    packages = with pkgs; [
-      emacs
-      vscode
-      alacritty
-      wpsoffice
-      steam
-      qq
-      spotify
-      playerctl
-      vlc
-      rofi
-      pasystray
-      pulsemixer
-    ];
-  };
-
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "jason";
@@ -165,7 +143,6 @@
   environment.systemPackages = with pkgs; [
     git
     firefox
-    microsoft-edge
     dolphin
     breeze-icons
     htop
