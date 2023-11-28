@@ -1,0 +1,10 @@
+[Unit]
+Description=fuckGFW
+
+[Service]
+Type=simple
+ExecStart=/run/current-system/sw/bin/clash
+
+[Install]
+WantedBy=default.target
+

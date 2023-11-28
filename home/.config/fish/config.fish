@@ -1,0 +1,1 @@
+alias fuckGFW='export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890'
