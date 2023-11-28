@@ -55,6 +55,7 @@
             ".config/rofi"          = { recursive = true; source = .config/rofi; };
             ".config/systemd"       = { recursive = true; source = .config/systemd; };
 
+            ".xprofile".source = ./.xprofile;
             ".config/picom.conf".source = .config/picom.conf;
             ".local/share/fcitx5/rime/default.custom.yaml".source = rime/default.custom.yaml;
             ".local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml".source = rime/double_pinyin_flypy.schema.yaml;
