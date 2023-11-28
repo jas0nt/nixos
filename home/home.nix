@@ -31,6 +31,7 @@
             pkgs.pasystray
             pkgs.pulsemixer
             pkgs.python3
+            pkgs.feh
         ];
 
         programs.git = {
