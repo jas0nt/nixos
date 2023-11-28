@@ -144,6 +144,7 @@
       steam
       qq
       spotify
+      playerctl
       vlc
       rofi
       pasystray
@@ -164,6 +165,8 @@
     git
     firefox
     microsoft-edge
+    dolphin
+    breeze-icons
     htop
     vim
     wget
