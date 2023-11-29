@@ -30,9 +30,16 @@
             pkgs.rofi
             pkgs.pasystray
             pkgs.pulsemixer
-            pkgs.python3
             pkgs.feh
+            (pkgs.python3.withPackages (ps: with ps; [
+                pip virtualenv
+            ]))
         ];
+
+        programs = {
+            bat.enable = true;
+            jq.enable = true;
+        };
 
         programs.git = {
             enable = true;
@@ -45,6 +52,11 @@
             shellAliases = {
                 fuckGFW = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890";
             };
+        };
+
+        programs.autojump = {
+            enable = true;
+            enableFishIntegration = true;
         };
 
         home.file = {
