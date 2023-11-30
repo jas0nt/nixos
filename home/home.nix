@@ -17,6 +17,11 @@
     home-manager.useGlobalPkgs = true;
     home-manager.users.jason = { pkgs, ... }: {
         home.stateVersion = "23.05";
+        home.pointerCursor.gtk.enable = true;
+        home.pointerCursor.package = pkgs.bibata-cursors;
+        home.pointerCursor.name = "Bibata-Modern-Classic";
+        home.pointerCursor.size = 16;
+
         home.packages = [
             pkgs.emacs
             pkgs.vscode
