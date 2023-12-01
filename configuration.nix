@@ -87,24 +87,42 @@
     layout = "us";
     xkbVariant = "";
 
-    displayManager = {
-        sddm.enable = true;
-        defaultSession = "none+awesome";
-    };
+    #displayManager = {
+    #    sddm.enable = true;
+    #};
 
-    windowManager.awesome = {
-      enable = true;
-      luaModules = with pkgs.luaPackages; [
-        luarocks # is the package manager for Lua modules
-        luadbi-mysql # Database abstraction layer
-      ];
+    #windowManager.awesome = {
+    #  enable = true;
+    #  luaModules = with pkgs.luaPackages; [
+    #    luarocks # is the package manager for Lua modules
+    #    luadbi-mysql # Database abstraction layer
+    #  ];
+    #};
+  };
 
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+    xwayland.hidpi = true;
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = "jason";
+      };
+      default_session = initial_session;
     };
   };
 
-  # Enable the KDE Plasma Desktop Environment.
-  #services.xserver.displayManager.sddm.enable = true;
-  #services.xserver.desktopManager.plasma5.enable = true;
+  programs.waybar = {
+    enable = true;
+    package = pkgs.waybar;
+  };
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -118,12 +136,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -138,11 +150,18 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";  # # Hint Electon apps to use wayland
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    xwayland
+    hyprpaper
+    rofi-wayland
     git
-    firefox
+    firefox-wayland
     dolphin
     breeze-icons
     htop

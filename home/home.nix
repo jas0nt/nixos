@@ -32,7 +32,6 @@
             pkgs.spotify
             pkgs.playerctl
             pkgs.vlc
-            pkgs.rofi
             pkgs.pasystray
             pkgs.pulsemixer
             pkgs.feh
@@ -66,6 +65,7 @@
 
         home.file = {
             ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
+            ".config/hypr"          = { recursive = true; source = .config/hypr; };
             ".config/awesome"       = { recursive = true; source = .config/awesome; };
             ".config/fish"          = { recursive = true; source = .config/fish; };
             ".config/fontconfig"    = { recursive = true; source = .config/fontconfig; };
