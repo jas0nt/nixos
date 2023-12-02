@@ -3,7 +3,7 @@ Description=fuckGFW
 
 [Service]
 Type=simple
-ExecStart=/run/current-system/sw/bin/clash
+ExecStart=/run/current-system/sw/bin/clash-meta
 
 [Install]
 WantedBy=default.target

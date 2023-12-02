@@ -33,6 +33,10 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
+  services.devmon.enable = true;
+  services.gvfs.enable = true; 
+  services.udisks2.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
@@ -59,8 +63,8 @@
   };
 
   fonts = {
-    enableDefaultFonts = true;
-    fonts = with pkgs; [ 
+    enableDefaultPackages = true;
+    packages = with pkgs; [ 
       wqy_zenhei  #steam
       nerdfonts
       noto-fonts
@@ -102,9 +106,9 @@
 
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
+    enableNvidiaPatches = true;
     xwayland.enable = true;
-    xwayland.hidpi = true;
+    #xwayland.hidpi = true;
   };
 
   services.greetd = {
@@ -171,7 +175,7 @@
     ranger
     fzf
     ripgrep
-    clash
+    clash-meta
     starship
     picom
   ];
