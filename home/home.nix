@@ -26,6 +26,9 @@
             pkgs.emacs
             pkgs.vscode
             pkgs.alacritty
+            (pkgs.python3.withPackages (ps: with ps; [
+                pip virtualenv
+            ]))
             pkgs.wpsoffice
             pkgs.steam
             pkgs.qq
@@ -35,9 +38,7 @@
             pkgs.pasystray
             pkgs.pulsemixer
             pkgs.feh
-            (pkgs.python3.withPackages (ps: with ps; [
-                pip virtualenv
-            ]))
+            pkgs.qbittorrent
         ];
 
         programs = {
