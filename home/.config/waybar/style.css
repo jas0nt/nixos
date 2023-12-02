@@ -139,7 +139,7 @@ window#waybar {
 }
 
 #custom-launcher {
-    color: #e5809e;
+    color: #7EBAE4;
     background-color: #282828;
     border-radius: 0px 24px 0px 0px;
     margin: 0px 0px 0px 0px;
@@ -149,7 +149,7 @@ window#waybar {
 }
 
 #custom-launcher button:hover {
-    background-color: #FB4934;
+    background-color: #5277C3;
     color: transparent;
     border-radius: 8px;
     margin-right: -5px;

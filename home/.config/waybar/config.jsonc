@@ -17,44 +17,14 @@
   ],
   "modules-right": [
     "pulseaudio",
-    "network",
     "tray",
-    "cpu",
-    "memory",
-    "disk"
+    "group/hardware"
   ],
-  // Modules configuration
-  //"clock": {
-  //  "format": "  {:%H:%M}",
-  //  "tooltip": "true",
-  //  "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-  //  "format-alt": " {:%d/%m}"
-  //},
   "clock": {
-    //"format": "{:%H:%M}  ",
     "format": "{:%H:%M  %a  %b %d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "on-scroll": 1,
-      "on-click-right": "mode",
-      "format": {
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    },
-    "actions": {
-      "on-click-right": "mode",
-      "on-click-forward": "tz_up",
-      "on-click-backward": "tz_down",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+    "on-click": "hyprctl dispatch workspace e-1",
+    "on-click-right": "hyprctl dispatch workspace e+1"
   },
   "hyprland/workspaces": {
     "active-only": false,
@@ -76,6 +46,13 @@
       "sort-by-number": true
     },
   },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate"
+  },
   "custom/playerctl": {
     "format": "{icon}",
     "return-type": "json",
@@ -91,9 +68,8 @@
     "format": "<span>𝅘𝅥𝅮   {}</span>",
     "return-type": "json",
     "max-length": 48,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl play-pause",
+    "exec": "playerctl -i firefox -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl -i firefox play-pause",
     "on-scroll-up": "playerctl previous",
     "on-scroll-down": "playerctl next",
     "format-icons": {
@@ -121,6 +97,20 @@
       ""
     ]
   },
+  "group/hardware": {
+		"orientation": "horizontal",
+		"modules": [
+			"network",
+			"cpu",
+			"memory",
+			"disk",
+			"battery"
+		],
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    }
+	},
   "memory": {
     "format": "󰍛 {}%",
     "format-alt": "󰍛 {used}/{total} GiB",
@@ -178,10 +168,10 @@
       ]
     },
     "on-click": "pulsemixer --toggle-mute",
+    "on-click-right": "alacritty --class pulsemixer -e pulsemixer",
     "on-scroll-up": "pulsemixer --change-volume +1",
     "on-scroll-down": "pulsemixer --change-volume -1",
-    "scroll-step": 5,
-    "on-click-right": "alacritty --class pulsemixer -e pulsemixer"
+    "scroll-step": 5
   },
   "custom/launcher": {
     //"format": "󰈸",
