@@ -47,6 +47,7 @@
             pkgs.qq
             pkgs.spotify
             pkgs.playerctl
+            pkgs.mpv
             pkgs.vlc
             pkgs.feh
             pkgs.qbittorrent

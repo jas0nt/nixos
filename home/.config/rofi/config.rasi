@@ -1,12 +1,13 @@
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,window";
+    modi:                       "drun,run,window";
     show-icons:                 true;
+    icon-theme:                 "BeautyLine";
     display-drun:               "";
     display-run:                "";
     display-window:             "";
-	drun-display-format:        "{name}";
-	window-format:              "{w} · {c} · {t}";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
 }
 
 /*****----- Global Properties -----*****/

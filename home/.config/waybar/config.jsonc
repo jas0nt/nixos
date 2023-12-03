@@ -9,14 +9,14 @@
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces",
-    "wlr/taskbar",
-    //"custom/playerctl",
-    "custom/playerlabel"
+    "wlr/taskbar"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
+    //"custom/playerctl",
+    "custom/playerlabel",
     "pulseaudio",
     "tray",
     "group/hardware"
@@ -177,7 +177,6 @@
   "custom/launcher": {
     //"format": "󰈸",
     "format": " ",
-    "on-click": "rofi -modi run -show drun"
-    // "on-click-right": "bash $HOME/.config/rofi/run.sh"
+    //"on-click": "rofi -show drun"
   }
 }
