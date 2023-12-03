@@ -15,7 +15,7 @@ window#waybar {
 }
 
 #workspaces {
-    background: #282828;
+    background: transparent;
     padding: 0px 0px 0px 0px;
     border-radius: 0px 17px 17px 0px;
     border: solid 0px #f4d9e1;
@@ -27,18 +27,20 @@ window#waybar {
     /*padding: 0px 9px;*/
     margin: 0px 3px;
     border-radius: 20px;
-    color: #928374;
+    color: #6272a4;
 }
 
 #workspaces button.active {
-    color: #f4d9e1;
+    color: #50fa7b;
     background-color: transparent;
     border-radius: 20px;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 #workspaces button:hover {
-    background-color: #7EBAE4;
-    color: black;
+    background-color: #44475a;
+    color: #282a36;
     border-radius: 20px;
 }
 
@@ -140,7 +142,7 @@ window#waybar {
 
 #custom-launcher {
     color: #7EBAE4;
-    background-color: #282828;
+    background: transparent;
     border-radius: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
     padding: 0 10px 0 10px;

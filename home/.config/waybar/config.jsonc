@@ -8,8 +8,8 @@
   "margin-right": 0,
   "modules-left": [
     "custom/launcher",
-    "hyprland/workspaces",
-    "wlr/taskbar"
+    "hyprland/workspaces"
+    //"wlr/taskbar"
   ],
   "modules-center": [
     "clock"
@@ -30,16 +30,17 @@
     "active-only": false,
     "all-outputs": true,
     "disable-scroll": false,
+    "show-special": true,
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      //"1": "一",
-      //"2": "二",
-      //"3": "三",
-      //"4": "四",
-      //"5": "五",
+      "1": "",
+      "2": "",
+      "3": "",
+      "7": "",
+      "special": "󰸳",
       "urgent": "",
       "active": "",
       "default": "󰧞",
@@ -51,7 +52,10 @@
     "icon-size": 16,
     "icon-theme": "BeautyLine",
     "tooltip-format": "{title}",
-    "on-click": "activate"
+    "on-click": "activate",
+    "ignore-list": [
+       "Alacritty"
+    ],
   },
   "custom/playerctl": {
     "format": "{icon}",
