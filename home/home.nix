@@ -36,7 +36,7 @@
             pkgs.pulsemixer
 
             pkgs.emacs
-            pkgs.vscode
+            pkgs.vscode-fhs
             pkgs.alacritty
             (pkgs.python3.withPackages (ps: with ps; [
                 pip virtualenv
