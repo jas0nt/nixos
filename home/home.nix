@@ -14,6 +14,7 @@
         shell = pkgs.fish;
     };
 
+
     home-manager.useGlobalPkgs = true;
     home-manager.users.jason = { pkgs, ... }: {
         home.stateVersion = "23.05";
@@ -22,21 +23,31 @@
         home.pointerCursor.name = "Bibata-Modern-Classic";
         home.pointerCursor.size = 16;
 
+        gtk = {
+            iconTheme = {
+                package = pkgs.beauty-line-icon-theme;
+                name = "BeautyLine";
+            };
+        };
+
         home.packages = [
+            pkgs.beauty-line-icon-theme
+            pkgs.pasystray
+            pkgs.pulsemixer
+
             pkgs.emacs
             pkgs.vscode
             pkgs.alacritty
             (pkgs.python3.withPackages (ps: with ps; [
                 pip virtualenv
             ]))
+
             pkgs.wpsoffice
             pkgs.steam
             pkgs.qq
             pkgs.spotify
             pkgs.playerctl
             pkgs.vlc
-            pkgs.pasystray
-            pkgs.pulsemixer
             pkgs.feh
             pkgs.qbittorrent
         ];
@@ -67,6 +78,7 @@
         home.file = {
             ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
             ".config/hypr"          = { recursive = true; source = .config/hypr; };
+            ".config/waybar"        = { recursive = true; source = .config/waybar; };
             ".config/awesome"       = { recursive = true; source = .config/awesome; };
             ".config/fish"          = { recursive = true; source = .config/fish; };
             ".config/fontconfig"    = { recursive = true; source = .config/fontconfig; };
