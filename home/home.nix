@@ -23,6 +23,12 @@
         home.pointerCursor.name = "Bibata-Modern-Classic";
         home.pointerCursor.size = 16;
 
+        home.sessionVariables = {
+            EDITOR = "vim";
+	    BROWSER = "firefox";
+	    TERMINAL = "alacritty";
+        };
+
         gtk = {
             iconTheme = {
                 package = pkgs.beauty-line-icon-theme;
@@ -36,8 +42,9 @@
             pkgs.pulsemixer
 
             pkgs.emacs
-            pkgs.vscode-fhs
+            pkgs.vscode
             pkgs.alacritty
+            pkgs.tig
             (pkgs.python3.withPackages (ps: with ps; [
                 pip virtualenv
             ]))
@@ -87,6 +94,7 @@
             ".config/rofi"          = { recursive = true; source = .config/rofi; };
             ".config/systemd"       = { recursive = true; source = .config/systemd; };
 
+            ".config/mimeapps.list".source = .config/mimeapps.list;
             ".xprofile".source = ./.xprofile;
             ".config/picom.conf".source = .config/picom.conf;
             ".local/share/fcitx5/rime/default.custom.yaml".source = rime/default.custom.yaml;

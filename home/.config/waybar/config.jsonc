@@ -128,14 +128,14 @@
     "on-click-right": "nm-connection-editor"
   },
   "group/hardware": {
-		"orientation": "horizontal",
-		"modules": [
-			"network",
-			"cpu",
-			"memory",
-			"disk",
-			"battery"
-		],
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "cpu",
+      "memory",
+      "disk",
+      "battery"
+    ],
     "drawer": {
       "transition-duration": 500,
       "transition-left-to-right": true
