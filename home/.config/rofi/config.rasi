@@ -160,9 +160,9 @@ listview {
     enabled:                     true;
     columns:                     1;
     lines:                       8;
-    cycle:                       true;
+    cycle:                       false;
     dynamic:                     true;
-    scrollbar:                   true;
+    scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
@@ -237,7 +237,7 @@ element alternate.active {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        24px;
+    size:                        40px;
     cursor:                      inherit;
 }
 element-text {
