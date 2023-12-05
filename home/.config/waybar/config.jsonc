@@ -50,7 +50,6 @@
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 16,
-    "icon-theme": "BeautyLine",
     "tooltip-format": "{title}",
     "on-click": "activate",
     "ignore-list": [
@@ -143,7 +142,8 @@
 	},
   "tray": {
     "icon-size": 16,
-    "spacing": 8
+    "spacing": 8,
+    "reverse-direction": true
   },
   "backlight": {
     // "device": "acpi_video1",

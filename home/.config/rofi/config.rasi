@@ -2,7 +2,6 @@
 configuration {
     modi:                       "drun,run,window";
     show-icons:                 true;
-    icon-theme:                 "BeautyLine";
     display-drun:               "";
     display-run:                "";
     display-window:             "";

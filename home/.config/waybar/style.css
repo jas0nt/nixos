@@ -74,7 +74,7 @@ window#waybar {
 }
 
 #tray {
-    background: #282828;
+    background: rgba(40, 42, 54, 0.7);
     margin: 5px 5px 5px 5px;
     border-radius: 10px;
     padding: 0px 5px;
@@ -83,7 +83,6 @@ window#waybar {
 
 #clock {
     color: #E6B9C6;
-    /*background-color: #282828;*/
     background-color: rgba(28, 28, 28, 0.7);
     border-radius: 20px 20px 20px 20px;
     padding-left: 15px;

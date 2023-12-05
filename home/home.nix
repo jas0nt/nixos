@@ -6,6 +6,7 @@
         <home-manager/nixos>
     ];
 
+
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.jason = {
         isNormalUser = true;
@@ -14,22 +15,30 @@
         shell = pkgs.fish;
     };
 
-
     home-manager.useGlobalPkgs = true;
     home-manager.users.jason = { pkgs, ... }: {
-        home.stateVersion = "23.05";
-        home.pointerCursor.gtk.enable = true;
-        home.pointerCursor.package = pkgs.bibata-cursors;
-        home.pointerCursor.name = "Bibata-Modern-Classic";
-        home.pointerCursor.size = 16;
+        home.stateVersion = "23.11";
 
         home.sessionVariables = {
             EDITOR = "vim";
 	    BROWSER = "firefox";
 	    TERMINAL = "alacritty";
         };
+	
+	home.pointerCursor = {
+            gtk.enable = true;
+            package = pkgs.bibata-cursors;
+            name = "Bibata-Modern-Classic";
+            size = 16;
+        };
 
         gtk = {
+            enable = true;
+            cursorTheme = {
+                package = pkgs.bibata-cursors;
+                name = "Bibata-Modern-Classic";
+                size = 16;
+            };
             iconTheme = {
                 package = pkgs.beauty-line-icon-theme;
                 name = "BeautyLine";
@@ -37,7 +46,6 @@
         };
 
         home.packages = [
-            pkgs.beauty-line-icon-theme
             pkgs.pasystray
             pkgs.pulsemixer
 
