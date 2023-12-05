@@ -19,6 +19,11 @@
     home-manager.users.jason = { pkgs, ... }: {
         home.stateVersion = "23.11";
 
+        services.dunst = {
+            enable = true;
+            package = pkgs.dunst;
+        };
+
         home.sessionVariables = {
             EDITOR = "vim";
 	    BROWSER = "firefox";
