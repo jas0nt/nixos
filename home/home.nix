@@ -86,6 +86,7 @@
             pkgs.vlc
             pkgs.feh
             pkgs.qbittorrent
+            pkgs.calcure
         ];
 
         programs = {

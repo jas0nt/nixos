@@ -179,8 +179,8 @@
     fzf
     ripgrep
     clash-meta
-    starship
     picom
+    networkmanagerapplet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

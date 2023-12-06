@@ -23,8 +23,7 @@
   ],
   "clock": {
     "format": "{:%H:%M  %a  %b %d}",
-    "on-click": "hyprctl dispatch workspace e-1",
-    "on-click-right": "hyprctl dispatch workspace e+1"
+    "on-click": "pkill calcure || alacritty --class calcure -e calcure"
   },
   "hyprland/workspaces": {
     "active-only": false,
@@ -126,10 +125,13 @@
     "tooltip-format": "{essid}",
     "on-click-right": "nm-connection-editor"
   },
+  "custom/mytray": {
+    "format": "󰐼"
+  },
   "group/hardware": {
     "orientation": "horizontal",
     "modules": [
-      "network",
+      "custom/mytray",
       "cpu",
       "memory",
       "disk",

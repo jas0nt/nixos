@@ -139,6 +139,7 @@ window#waybar {
     margin-left: 0px;
 }
 
+#custom-mytray,
 #custom-launcher {
     color: #7EBAE4;
     background: transparent;
