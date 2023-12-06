@@ -22,6 +22,20 @@
         services.dunst = {
             enable = true;
             package = pkgs.dunst;
+            settings = {
+                global = {
+                    icon_theme = "BeautyLine";
+                    enable_recursive_icon_lookup = true;
+                    corner_radius = 10;
+                    width = 300;
+                    height = 300;
+                    offset = "10x50";
+                    origin = "top-right";
+                    transparency = 50;
+                    frame_color = "#bd93f9";
+                    font = "Noto Sans CJK 20";
+                };
+            };
         };
 
         home.sessionVariables = {
