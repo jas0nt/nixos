@@ -72,6 +72,7 @@
             pkgs.vscode
             pkgs.alacritty
             pkgs.tig
+            pkgs.tree
             (pkgs.python3.withPackages (ps: with ps; [
                 pip virtualenv
             ]))
@@ -124,8 +125,12 @@
             #".xprofile".source = ./.xprofile;
             ".config/mimeapps.list".source = .config/mimeapps.list;
             ".config/picom.conf".source = .config/picom.conf;
-            ".local/share/fcitx5/rime/default.custom.yaml".source = rime/default.custom.yaml;
-            ".local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml".source = rime/double_pinyin_flypy.schema.yaml;
+
+            # fcitx5 & rime
+            ".local/share/fcitx5/themes/transparent-green"                         = { recursive = true; source = .local/share/fcitx5/themes/transparent-green; };
+            ".config/fcitx5/conf/classicui.conf".source                            = .config/fcitx5/conf/classicui.conf;
+            ".local/share/fcitx5/rime/default.custom.yaml".source                  = .local/share/fcitx5/rime/default.custom.yaml;
+            ".local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml".source      = .local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml;
         };
 
     };
