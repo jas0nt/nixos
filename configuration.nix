@@ -157,6 +157,9 @@
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";  # # Hint Electon apps to use wayland
+    EDITOR = "vim";
+    BROWSER = "firefox";
+    TERMINAL = "alacritty";
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget

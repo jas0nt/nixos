@@ -26,8 +26,8 @@
 
         home.sessionVariables = {
             EDITOR = "vim";
-	    BROWSER = "firefox";
-	    TERMINAL = "alacritty";
+            BROWSER = "firefox";
+            TERMINAL = "alacritty";
         };
 	
 	home.pointerCursor = {
@@ -90,7 +90,7 @@
                 fuckGFW = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890";
             };
         };
-
+	
         programs.autojump = {
             enable = true;
             enableFishIntegration = true;
@@ -107,8 +107,8 @@
             ".config/rofi"          = { recursive = true; source = .config/rofi; };
             ".config/systemd"       = { recursive = true; source = .config/systemd; };
 
+            #".xprofile".source = ./.xprofile;
             ".config/mimeapps.list".source = .config/mimeapps.list;
-            ".xprofile".source = ./.xprofile;
             ".config/picom.conf".source = .config/picom.conf;
             ".local/share/fcitx5/rime/default.custom.yaml".source = rime/default.custom.yaml;
             ".local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml".source = rime/double_pinyin_flypy.schema.yaml;
