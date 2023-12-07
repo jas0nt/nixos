@@ -126,7 +126,7 @@
     "on-click-right": "nm-connection-editor"
   },
   "custom/mytray": {
-    "format": "󰐼"
+    "format": ""
   },
   "group/hardware": {
     "orientation": "horizontal",
@@ -166,12 +166,13 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "󰝟 --%",
+    "format-muted": "󰖁 --%",
     "format-icons": {
       "default": [
         "󰕿",
-        "󰖀",
-        "󰕾"
+        "",
+        "",
+        "󱄡"
       ]
     },
     "on-click": "pulsemixer --toggle-mute",
