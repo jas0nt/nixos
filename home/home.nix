@@ -26,14 +26,36 @@
                 global = {
                     icon_theme = "BeautyLine";
                     enable_recursive_icon_lookup = true;
-                    corner_radius = 10;
-                    width = 300;
+                    corner_radius = 15;
+                    width = 400;
                     height = 300;
-                    offset = "10x50";
-                    origin = "top-right";
+                    offset = "10x20";
+                    origin = "bottom-right";
                     transparency = 50;
-                    frame_color = "#bd93f9";
+                    frame_color = "#282a36";
+                    separator_color = "#282a36";
                     font = "Noto Sans CJK 20";
+                    progress_bar = true;
+                    progress_bar_height = 10;
+                    progress_bar_frame_width = 1;
+                    progress_bar_min_width = 150;
+                    progress_bar_max_width = 300;
+                };
+                urgency_low = {
+                    background = "#282a36";
+                    foreground = "#6272a4";
+                    timeout = 10;
+                };
+                urgency_normal = {
+                    background = "#282a36";
+                    foreground = "#bd93f9";
+                    timeout = 10;
+                };
+                urgency_critical = {
+                    background = "#ff5555";
+                    foreground = "#f8f8f2";
+                    frame_color = "#ff5555";
+                    timeout = 10;
                 };
             };
         };
