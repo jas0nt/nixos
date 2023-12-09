@@ -182,6 +182,8 @@
     networkmanagerapplet
     grimblast  # screenshot
     nwg-look
+    killall
+    gnumake libgccjit cmake
   ];
 
   services.xserver.excludePackages = [ pkgs.xterm ];

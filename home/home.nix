@@ -93,7 +93,7 @@
             pkgs.pasystray
             pkgs.pulsemixer
 
-            pkgs.emacs
+            pkgs.emacs pkgs.librime pkgs.emacsPackages.rime
             pkgs.vscode
             pkgs.alacritty
             pkgs.tig
