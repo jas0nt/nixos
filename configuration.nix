@@ -181,6 +181,8 @@
     clash-meta
     picom
     networkmanagerapplet
+    grimblast  # screenshot
+    nwg-look
   ];
 
   services.xserver.excludePackages = [ pkgs.xterm ];
