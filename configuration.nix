@@ -169,8 +169,7 @@
     rofi-wayland
     git
     firefox-wayland
-    dolphin
-    breeze-icons
+    pcmanfm
     htop
     vim
     wget
