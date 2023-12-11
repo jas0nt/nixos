@@ -176,7 +176,6 @@
       ]
     },
     "on-click": "pulsemixer --toggle-mute",
-    "on-click-right": "pkill pulsemixer || hyprctl dispatch exec \"[move 70% 68%; size 30% 30%; float] $TERMINAL -e pulsemixer\"",
     "on-scroll-up": "pulsemixer --change-volume +1",
     "on-scroll-down": "pulsemixer --change-volume -1",
     "scroll-step": 5
