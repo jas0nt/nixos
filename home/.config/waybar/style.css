@@ -187,12 +187,9 @@ window#waybar {
 }
 
 #window {
-    background: #282828;
+    background: transparent;
     padding-left: 15px;
     padding-right: 15px;
-    border-radius: 16px;
-    /*border-left: solid 1px #282738;*/
-    /*border-right: solid 1px #282738;*/
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: normal;

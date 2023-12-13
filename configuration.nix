@@ -108,7 +108,11 @@
     enable = true;
     enableNvidiaPatches = true;
     xwayland.enable = true;
-    #xwayland.hidpi = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
   };
 
   services.greetd = {
@@ -164,7 +168,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    xwayland
+    #xwayland
+    qt6.qtwayland
     hyprpaper
     rofi-wayland
     git

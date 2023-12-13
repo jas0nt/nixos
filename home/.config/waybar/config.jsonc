@@ -8,7 +8,8 @@
   "margin-right": 0,
   "modules-left": [
     "custom/launcher",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/window"
     //"wlr/taskbar"
   ],
   "modules-center": [
@@ -24,6 +25,10 @@
   "clock": {
     "format": "{:%H:%M  %a  %b %d}",
     "on-click": "pkill calcure || $TERMINAL --class calcure -e calcure"
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "separate-outputs": true
   },
   "hyprland/workspaces": {
     "active-only": false,
