@@ -112,6 +112,7 @@
             pkgs.feh
             pkgs.qbittorrent
             pkgs.calcure
+            pkgs.localsend
         ];
 
         programs = {
@@ -141,7 +142,6 @@
             ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
             ".config/hypr"          = { recursive = true; source = .config/hypr; };
             ".config/waybar"        = { recursive = true; source = .config/waybar; };
-            ".config/awesome"       = { recursive = true; source = .config/awesome; };
             ".config/fish"          = { recursive = true; source = .config/fish; };
             ".config/fontconfig"    = { recursive = true; source = .config/fontconfig; };
             ".config/ranger"        = { recursive = true; source = .config/ranger; };
