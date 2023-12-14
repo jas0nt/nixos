@@ -170,9 +170,14 @@
   environment.systemPackages = with pkgs; [
     #xwayland
     qt6.qtwayland
+    killall
+    gnumake libgccjit cmake
+    systemctl-tui
+    bluetuith
     hyprpaper
+    
     rofi-wayland
-    git
+    git lazygit tig
     firefox-wayland
     pcmanfm
     htop
@@ -187,8 +192,6 @@
     networkmanagerapplet
     grimblast  # screenshot
     nwg-look
-    killall
-    gnumake libgccjit cmake
   ];
 
   services.xserver.excludePackages = [ pkgs.xterm ];

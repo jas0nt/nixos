@@ -96,8 +96,8 @@
             pkgs.emacs pkgs.librime pkgs.emacsPackages.rime
             pkgs.vscode
             pkgs.alacritty
-            pkgs.tig
             pkgs.tree
+            pkgs.sway-launcher-desktop
             (pkgs.python3.withPackages (ps: with ps; [
                 pip virtualenv
             ]))
@@ -105,7 +105,7 @@
             pkgs.wpsoffice
             pkgs.steam
             pkgs.qq
-            pkgs.spotify
+            pkgs.spotify pkgs.cmus
             pkgs.playerctl
             pkgs.mpv
             pkgs.vlc
