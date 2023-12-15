@@ -155,6 +155,9 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "jason";
 
+  # docker
+  virtualisation.docker.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

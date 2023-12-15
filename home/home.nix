@@ -11,7 +11,7 @@
     users.users.jason = {
         isNormalUser = true;
         description = "jason";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         shell = pkgs.fish;
     };
 
@@ -113,6 +113,7 @@
             pkgs.qbittorrent
             pkgs.calcure
             pkgs.localsend
+            pkgs.quickemu
         ];
 
         programs = {
