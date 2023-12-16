@@ -103,7 +103,6 @@
             ]))
 
             pkgs.wpsoffice
-            pkgs.steam
             pkgs.qq
             pkgs.spotify pkgs.cmus
             pkgs.playerctl
