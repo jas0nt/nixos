@@ -16,7 +16,6 @@
 
 * {
     border: none;
-    border-radius: 0px;
     font-family: Noto Sans CJK;
     font-size: 14px;
     font-style: normal;
@@ -36,7 +35,8 @@ window#waybar {
 
 #workspaces button {
     border-radius: 50%;
-    margin: 0px 2px;
+    padding: 0 0.25em;
+    margin: 0 0.1em;
     background-color: transparent;
     color: @Comment;
 }
@@ -60,9 +60,20 @@ window#waybar {
 #network,
 #custom-launcher {
     background: transparent;
-    padding: 0px 5px 0px 5px;
-    margin: 0px 5px 0px 5px;
-    border-radius: 8px;
+    margin: 0 0.1em;
+    border-radius: 20%;
+}
+
+#custom-mytray,
+#custom-launcher {
+    padding: 0 0.5em;
+    color: @Nix-Logo;
+    background: transparent;
+}
+
+#custom-launcher button:hover {
+    background-color: #5277C3;
+    color: transparent;
 }
 
 #custom-power {
@@ -78,19 +89,14 @@ window#waybar {
 
 #tray {
     background: @Background-a;
-    margin: 5px 5px 5px 5px;
-    border-radius: 10px;
-    padding: 0px 5px;
+    border-radius: 30%;
+    padding: 0 0.5em;
 }
 
 #clock {
     color: #E6B9C6;
     background-color: transparent;
-    border-radius: 20px 20px 20px 20px;
-    padding-left: 5px;
-    padding-right: 5px;
     font-weight: bold;
-    /*border-left: solid 1px #282738;*/
 }
 
 
@@ -112,7 +118,7 @@ window#waybar {
     background-color: #24283b;
     color: #db4b4b;
     border-radius: 0px 0px 0px 0px;
-    margin: 5px;
+    /* margin: 5px; */
     margin-left: 0px;
     margin-right: 0px;
     padding: 0px 0px;
@@ -126,55 +132,31 @@ window#waybar {
 
 #pulseaudio {
     color: #f4d9e1;
-    border-radius: 8px;
-    margin-left: 0px;
 }
 
 #pulseaudio.muted {
     background: transparent;
     color: #928374;
-    border-radius: 8px;
-    margin-left: 0px;
-}
-
-#custom-mytray,
-#custom-launcher {
-    color: @Nix-Logo;
-    background: transparent;
-    border-radius: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-    padding: 0 10px 0 10px;
-    /*border-right: solid 1px #282738;*/
-    font-size: 18px;
-}
-
-#custom-launcher button:hover {
-    background-color: #5277C3;
-    color: transparent;
-    border-radius: 8px;
-    margin-right: -5px;
-    margin-left: 10px;
 }
 
 #custom-playerlabel,
 #window {
     background: transparent;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-weight: normal;
+    margin: 0 0.5em;
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
 }
 
 #cpu,
 #memory,
 #disk {
-    background-color: #282828;
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 10px 0px 10px;
+    background-color: @Background;
+    border-radius: 30%;
+    margin: 0 0.1em;
+    padding: 0 0.1em;
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
