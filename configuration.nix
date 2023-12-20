@@ -91,17 +91,22 @@
     layout = "us";
     xkbVariant = "";
 
-    #displayManager = {
-    #    sddm.enable = true;
-    #};
+    displayManager = {
+        sddm = {
+            enable = true;
+            wayland.enable = true;
+        };
+        defaultSession = "hyprland";
+        setupCommands = "Hyprland";
+    };
 
-    #windowManager.awesome = {
-    #  enable = true;
-    #  luaModules = with pkgs.luaPackages; [
-    #    luarocks # is the package manager for Lua modules
-    #    luadbi-mysql # Database abstraction layer
-    #  ];
-    #};
+    windowManager.awesome = {
+      enable = true;
+      luaModules = with pkgs.luaPackages; [
+        luarocks # is the package manager for Lua modules
+        luadbi-mysql # Database abstraction layer
+      ];
+    };
   };
 
   programs.hyprland = {
@@ -113,17 +118,6 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-  };
-
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "jason";
-      };
-      default_session = initial_session;
-    };
   };
 
   programs.waybar = {
@@ -160,6 +154,12 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
@@ -206,16 +206,6 @@
   ];
 
   services.xserver.excludePackages = [ pkgs.xterm ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
