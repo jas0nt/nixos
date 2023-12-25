@@ -89,7 +89,7 @@
 
     # Configure keymap in X11
     layout = "us";
-    xkbVariant = "";
+    #xkbVariant = "qwerty";
 
     displayManager = {
         sddm = {
@@ -175,7 +175,6 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -188,6 +187,7 @@
     hyprpaper
     
     rofi-wayland
+    dmenu
     git lazygit tig
     firefox-wayland
     pcmanfm

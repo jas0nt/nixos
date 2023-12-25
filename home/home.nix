@@ -110,6 +110,7 @@
             pkgs.vlc
             pkgs.feh
             pkgs.qbittorrent
+            pkgs.motrix
             pkgs.calcure
             pkgs.localsend
             pkgs.quickemu
@@ -141,6 +142,7 @@
         home.file = {
             ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
             ".config/hypr"          = { recursive = true; source = .config/hypr; };
+            ".config/awesome"       = { recursive = true; source = .config/awesome; };
             ".config/waybar"        = { recursive = true; source = .config/waybar; };
             ".config/fish"          = { recursive = true; source = .config/fish; };
             ".config/fontconfig"    = { recursive = true; source = .config/fontconfig; };
