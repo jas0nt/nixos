@@ -93,14 +93,18 @@
             pkgs.pasystray
             pkgs.pulsemixer
 
-            pkgs.emacs pkgs.librime pkgs.emacsPackages.rime
-            pkgs.vscode
-            pkgs.alacritty
-            pkgs.tree
-            pkgs.sway-launcher-desktop
             (pkgs.python3.withPackages (ps: with ps; [
                 pip virtualenv
             ]))
+            pkgs.jdk
+
+            pkgs.emacs pkgs.librime pkgs.emacsPackages.rime
+            pkgs.vscode
+            pkgs.lunarvim
+
+            pkgs.alacritty
+            pkgs.tree
+            pkgs.sway-launcher-desktop
 
             pkgs.wpsoffice
             pkgs.qq
@@ -119,6 +123,7 @@
         programs = {
             bat.enable = true;
             jq.enable = true;
+            neovim.enable = true;
         };
 
         programs.git = {
