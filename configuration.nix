@@ -182,24 +182,25 @@
     qt6.qtwayland
     killall
     gnumake libgccjit cmake
+    hyprpaper
+    picom
+
+    # Modern unix tools
+    htop bat eza broot jq du-dust duf fd procs httpie tree fzf ripgrep
     systemctl-tui
     bluetuith
-    hyprpaper
-    
-    rofi-wayland
-    dmenu
     git lazygit tig
-    firefox-wayland
-    pcmanfm
-    htop
     vim
     wget
     neofetch
     ranger
-    fzf
-    ripgrep
+    unzip
+
+    rofi-wayland
+    dmenu
+    firefox-wayland
+    pcmanfm
     clash-meta
-    picom
     networkmanagerapplet
     grimblast  # screenshot
     nwg-look

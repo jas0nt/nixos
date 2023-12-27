@@ -92,6 +92,7 @@
         home.packages = [
             pkgs.pasystray
             pkgs.pulsemixer
+            pkgs.feh
 
             (pkgs.python3.withPackages (ps: with ps; [
                 pip virtualenv
@@ -103,26 +104,22 @@
             pkgs.lunarvim
 
             pkgs.alacritty
-            pkgs.tree
             pkgs.sway-launcher-desktop
+            pkgs.calcure
+            pkgs.playerctl
 
             pkgs.wpsoffice
             pkgs.qq
             pkgs.spotify pkgs.cmus
-            pkgs.playerctl
             pkgs.mpv
             pkgs.vlc
-            pkgs.feh
             pkgs.qbittorrent
             pkgs.motrix
-            pkgs.calcure
             pkgs.localsend
             pkgs.quickemu
         ];
 
         programs = {
-            bat.enable = true;
-            jq.enable = true;
             neovim.enable = true;
         };
 
@@ -137,19 +134,42 @@
             shellAliases = {
                 fuckGFW = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890";
             };
+            shellAbbrs = {
+                ls = "eza --icons";
+            };
         };
-	
+
         programs.autojump = {
             enable = true;
             enableFishIntegration = true;
         };
 
+        programs.starship = {
+            package = pkgs.starship;
+            enable = true;
+            enableFishIntegration = true;
+            settings = {
+                cmd_duration.style = "bold #f1fa8c";
+                directory.style = "bold #50fa7b";
+                hostname.style = "bold #ff5555";
+                git_branch.style = "bold #ff79c6";
+                git_status.style = "bold #ff5555";
+                username = {
+                  format = "[$user]($style) on ";
+                  style_user = "bold #bd93f9";
+                };
+                character = {
+                    success_symbol = "[>](bold #f8f8f2)";
+                    error_symbol = "[x](bold #ff5555)";
+                };
+            };
+        };
+
         home.file = {
             ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
             ".config/hypr"          = { recursive = true; source = .config/hypr; };
-            ".config/awesome"       = { recursive = true; source = .config/awesome; };
             ".config/waybar"        = { recursive = true; source = .config/waybar; };
-            ".config/fish"          = { recursive = true; source = .config/fish; };
+            ".config/awesome"       = { recursive = true; source = .config/awesome; };
             ".config/fontconfig"    = { recursive = true; source = .config/fontconfig; };
             ".config/ranger"        = { recursive = true; source = .config/ranger; };
             ".config/rofi"          = { recursive = true; source = .config/rofi; };
