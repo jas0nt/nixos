@@ -107,6 +107,7 @@
             pkgs.sway-launcher-desktop
             pkgs.calcure
             pkgs.playerctl
+            pkgs.fortune pkgs.pokemonsay
 
             pkgs.wpsoffice
             pkgs.qq
@@ -136,6 +137,11 @@
             };
             shellAbbrs = {
                 ls = "eza --icons";
+            };
+            functions = {
+                fish_greeting = {
+                    body = "fortune -s | pokemonsay -N";
+                };
             };
         };
 
