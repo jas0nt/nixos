@@ -207,6 +207,9 @@
     qt6.qtwayland
     killall
     gnumake libgccjit cmake
+    openssl
+    nmap
+
     hyprpaper
     picom
 

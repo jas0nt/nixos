@@ -98,6 +98,7 @@
                 pip virtualenv
             ]))
             pkgs.jdk
+            pkgs.nodejs
 
             pkgs.emacs pkgs.librime pkgs.emacsPackages.rime
             pkgs.vscode
@@ -134,6 +135,7 @@
             enable = true;
             shellAliases = {
                 fuckGFW = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890";
+                showcert = "nmap -p 443 --script ssl-cert";
             };
             shellAbbrs = {
                 ls = "eza --icons";
