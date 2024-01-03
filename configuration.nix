@@ -121,8 +121,9 @@
             enable = true;
             wayland.enable = true;
         };
-        defaultSession = "hyprland";
-        setupCommands = "Hyprland";
+        #defaultSession = "hyprland";
+        #setupCommands = "Hyprland";
+        defaultSession = "none+awesome";
     };
 
     windowManager.awesome = {
@@ -224,9 +225,9 @@
     ranger
     unzip
 
-    rofi-wayland
+    rofi
     dmenu
-    firefox-wayland
+    firefox
     pcmanfm
     clash-meta
     networkmanagerapplet
