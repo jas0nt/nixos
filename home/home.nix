@@ -98,10 +98,11 @@
                 pip virtualenv
             ]))
             pkgs.jdk
+            pkgs.lua
             pkgs.nodejs
 
             pkgs.emacs pkgs.librime pkgs.emacsPackages.rime
-            pkgs.vscode
+            pkgs.vscode-fhs
             pkgs.lunarvim
 
             pkgs.alacritty

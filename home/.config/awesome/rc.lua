@@ -814,4 +814,4 @@ tag.connect_signal("property::selected", backham)
 -- }}}
 
 -- Autorun programs
-awful.spawn.with_shell( os.getenv("HOME") .. "/.config/autostart/autostart.sh")
+awful.spawn.with_shell(os.getenv("HOME") .. "/.config/autostart/autostart.sh")
