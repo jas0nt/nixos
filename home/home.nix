@@ -73,7 +73,7 @@
             gtk.enable = true;
             package = pkgs.bibata-cursors;
             name = "Bibata-Modern-Ice";
-            size = 20;
+            size = 14;
         };
 
         gtk = {
@@ -81,7 +81,7 @@
             cursorTheme = {
                 package = pkgs.bibata-cursors;
                 name = "Bibata-Modern-Ice";
-                size = 20;
+                size = 14;
             };
             iconTheme = {
                 package = pkgs.beauty-line-icon-theme;
@@ -174,6 +174,7 @@
         };
 
         home.file = {
+            ".config/autostart"     = { recursive = true; source = .config/autostart; };
             ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
             ".config/hypr"          = { recursive = true; source = .config/hypr; };
             ".config/waybar"        = { recursive = true; source = .config/waybar; };
