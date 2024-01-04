@@ -1,5 +1,4 @@
 local gears                                     = require("gears")
--- local lain                                      = require("lain")
 local awful                                     = require("awful")
 local wibox                                     = require("wibox")
 local dpi                                       = require("beautiful.xresources").apply_dpi
@@ -26,8 +25,8 @@ theme.tasklist_bg_normal                        = theme.bg_normal
 theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
-theme.menu_height                               = dpi(10)
-theme.menu_width                                = dpi(140)
+theme.menu_height                               = dpi(15)
+theme.menu_width                                = dpi(150)
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
 theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
 theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
@@ -81,10 +80,8 @@ theme.titlebar_maximized_button_focus_active    = theme.dir .. "/icons/titlebar/
 theme.titlebar_maximized_button_normal_active   = theme.dir .. "/icons/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/maximized_normal_inactive.png"
+theme.systray_icon_spacing                      = dpi(0.5)
 
--- local markup                                    = lain.util.markup
--- local separators                                = lain.util.separators
-local keyboardlayout                            = awful.widget.keyboardlayout:new()
 
 -- Textclock
 -- local mytextclock = wibox.widget.textclock(markup(theme.fg_normal, " <b>%a</b> %b%d %H:%M"))
@@ -148,7 +145,6 @@ function theme.at_screen_connect(s)
         {             -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-            -- keyboardlayout,
             mytextclock,
             wibox.container.background(s.mylayoutbox, theme.bg_focus)
         },
