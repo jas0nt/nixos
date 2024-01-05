@@ -7,4 +7,4 @@ runOnce(){
 
 runOnce picom fcitx5 nm-applet pasystray
 
-pgrep 'firefox' || firefox
+pgrep 'firefox' || firefox &

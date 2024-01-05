@@ -486,11 +486,8 @@ clientkeys =
         awful.key(
             { modkey },
             "f",
-            function(c)
-                c.fullscreen = not c.fullscreen
-                c:raise()
-            end,
-            { description = "toggle fullscreen", group = "client" }
+            awful.client.floating.toggle,
+            { description = "toggle floating", group = "client" }
         ),
         awful.key(
             { modkey },
@@ -516,22 +513,6 @@ clientkeys =
         ),
         awful.key(
             { modkey },
-            "o",
-            function(c)
-                c:move_to_screen()
-            end,
-            { description = "move to screen", group = "client" }
-        ),
-        awful.key(
-            { modkey },
-            "t",
-            function(c)
-                c.ontop = not c.ontop
-            end,
-            { description = "toggle keep on top", group = "client" }
-        ),
-        awful.key(
-            { modkey },
             "n",
             function(c)
                 c.minimized = true
@@ -548,22 +529,13 @@ clientkeys =
             { description = "(un)maximize", group = "client" }
         ),
         awful.key(
-            { modkey, "Control" },
-            "m",
-            function(c)
-                c.maximized_vertical = not c.maximized_vertical
-                c:raise()
-            end,
-            { description = "(un)maximize vertically", group = "client" }
-        ),
-        awful.key(
             { modkey, "Shift" },
             "m",
             function(c)
-                c.maximized_horizontal = not c.maximized_horizontal
+                c.fullscreen = not c.fullscreen
                 c:raise()
             end,
-            { description = "(un)maximize horizontally", group = "client" }
+            { description = "toggle fullscreen", group = "client" }
         )
     )
 
@@ -694,7 +666,8 @@ awful.rules.rules = {
             class = {
                 "Arandr",
                 "Blueman-manager",
-                "launcher"
+                "launcher",
+                "pulsemixer"
             },
             name = {
                 "Event Tester", -- xev.
