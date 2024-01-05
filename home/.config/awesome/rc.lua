@@ -403,7 +403,7 @@ globalkeys =
             { modkey },
             "e",
             function()
-                awful.util.spawn(awful.util.terminal .. " --class ranger -e ranger")
+                awful.util.spawn(awful.util.terminal .. " --class fm -e nnn -de")
             end,
             { description = "Files", group = "launcher" }
         ),
@@ -667,7 +667,7 @@ awful.rules.rules = {
         properties = { screen = 1, tag = "2", switchtotag = true }
     },
     {
-        rule = { class = "ranger" },
+        rule = { class = "fm" },
         properties = { screen = 1, tag = "3", switchtotag = true }
     },
     {

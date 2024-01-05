@@ -215,14 +215,18 @@
     picom
 
     # Modern unix tools
-    htop bat eza broot jq du-dust duf fd procs httpie tree fzf ripgrep
+    htop bottom bat eza broot jq du-dust duf fd procs httpie tree fzf ripgrep
+    cava
+    genact
+    lolcat
+    nms
     systemctl-tui
     bluetuith
     git lazygit tig
     vim
     wget
     neofetch
-    ranger
+    nnn ranger
     unzip
 
     rofi

@@ -95,7 +95,7 @@
             pkgs.feh
 
             (pkgs.python3.withPackages (ps: with ps; [
-                pip virtualenv
+                pip virtualenv howdoi
             ]))
             pkgs.jdk
             pkgs.lua
@@ -194,6 +194,8 @@
             ".config/fcitx5/conf/classicui.conf".source                            = .config/fcitx5/conf/classicui.conf;
             ".local/share/fcitx5/rime/default.custom.yaml".source                  = .local/share/fcitx5/rime/default.custom.yaml;
             ".local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml".source      = .local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml;
+
+            ".config/cava/config".source                                           = .config/cava/config;
         };
 
     };
