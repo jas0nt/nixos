@@ -33,7 +33,7 @@
                     origin = "bottom-right";
                     gaps = true;
                     gap_size = 10;
-                    transparency = 50;
+                    transparency = 10;
                     frame_color = "#282a36";
                     separator_height = 1;
                     separator_color = "#282a36";
