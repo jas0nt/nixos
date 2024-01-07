@@ -40,14 +40,10 @@
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "7": "",
       "special": "󰸳",
-      "urgent": "",
-      "active": "",
-      "default": "󰧞",
+      "urgent": "",
+      "active": "󰧞",
+      "default": "",
       "sort-by-number": true
     },
   },
