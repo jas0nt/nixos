@@ -24,7 +24,7 @@
   ],
   "clock": {
     "format": "{:%H:%M  %a  %b %d}",
-    "on-click": "pkill calcure || $TERMINAL --class myfloating calcure"
+    "on-click": "pkill calcure || $TERMINAL --class myfloating -e calcure"
   },
   "hyprland/window": {
     "format": "{title}",
@@ -132,7 +132,7 @@
   },
   "custom/mytray": {
     "format": "󰥺",
-    "on-click": "pkill btm || $TERMINAL --class myfloatingl btm"
+    "on-click": "pkill btm || $TERMINAL --class myfloatingl -e btm"
   },
   "group/hardware": {
     "orientation": "horizontal",

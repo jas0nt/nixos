@@ -66,7 +66,7 @@
         home.sessionVariables = {
             EDITOR = "vim";
             BROWSER = "firefox";
-            TERMINAL = "kitty";
+            TERMINAL = "alacritty";
         };
 	
         home.pointerCursor = {
@@ -106,7 +106,6 @@
             pkgs.lunarvim
 
             pkgs.alacritty
-            pkgs.kitty
             pkgs.sway-launcher-desktop
             pkgs.calcure
             pkgs.playerctl
@@ -138,7 +137,6 @@
             shellAliases = {
                 fuckGFW  = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890";
                 showcert = "nmap -p 443 --script ssl-cert";
-                icat     = "kitten icat";
             };
             shellAbbrs = {
                 ll = "eza --icons -l";
@@ -180,7 +178,6 @@
         home.file = {
             ".config/autostart"     = { recursive = true; source = .config/autostart; };
             ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
-            ".config/kitty"         = { recursive = true; source = .config/kitty; };
             ".config/hypr"          = { recursive = true; source = .config/hypr; };
             ".config/waybar"        = { recursive = true; source = .config/waybar; };
             ".config/awesome"       = { recursive = true; source = .config/awesome; };

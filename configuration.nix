@@ -192,7 +192,7 @@
     #NIXOS_OZONE_WL = "1";  # # Hint Electon apps to use wayland
     EDITOR = "vim";
     BROWSER = "firefox";
-    TERMINAL = "kitty";
+    TERMINAL = "alacritty";
   };
 
   programs.steam = {
