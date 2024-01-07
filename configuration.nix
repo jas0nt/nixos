@@ -192,7 +192,7 @@
     #NIXOS_OZONE_WL = "1";  # # Hint Electon apps to use wayland
     EDITOR = "vim";
     BROWSER = "firefox";
-    TERMINAL = "alacritty";
+    TERMINAL = "kitty";
   };
 
   programs.steam = {
@@ -216,6 +216,7 @@
 
     # Modern unix tools
     htop bottom bat eza broot jq du-dust duf fd procs httpie tree fzf ripgrep
+    tmux
     cava
     genact
     lolcat

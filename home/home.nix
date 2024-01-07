@@ -66,7 +66,7 @@
         home.sessionVariables = {
             EDITOR = "vim";
             BROWSER = "firefox";
-            TERMINAL = "alacritty";
+            TERMINAL = "kitty";
         };
 	
         home.pointerCursor = {
@@ -136,11 +136,13 @@
         programs.fish = {
             enable = true;
             shellAliases = {
-                fuckGFW = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890";
+                fuckGFW  = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890";
                 showcert = "nmap -p 443 --script ssl-cert";
+                icat     = "kitten icat";
             };
             shellAbbrs = {
-                ls = "eza --icons";
+                ll = "eza --icons -l";
+                la = "eza --icons -la";
             };
             functions = {
                 fish_greeting = {
@@ -178,6 +180,7 @@
         home.file = {
             ".config/autostart"     = { recursive = true; source = .config/autostart; };
             ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
+            ".config/kitty"         = { recursive = true; source = .config/kitty; };
             ".config/hypr"          = { recursive = true; source = .config/hypr; };
             ".config/waybar"        = { recursive = true; source = .config/waybar; };
             ".config/awesome"       = { recursive = true; source = .config/awesome; };
