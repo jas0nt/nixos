@@ -121,9 +121,9 @@
             enable = true;
             wayland.enable = true;
         };
-        #defaultSession = "hyprland";
-        #setupCommands = "Hyprland";
-        defaultSession = "none+awesome";
+        defaultSession = "hyprland";
+        setupCommands = "Hyprland";
+        #defaultSession = "none+awesome";
     };
 
     windowManager.awesome = {
@@ -204,7 +204,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #xwayland
+    xwayland
     qt6.qtwayland
     killall
     gnumake libgccjit cmake

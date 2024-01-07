@@ -106,6 +106,7 @@
             pkgs.lunarvim
 
             pkgs.alacritty
+            pkgs.kitty
             pkgs.sway-launcher-desktop
             pkgs.calcure
             pkgs.playerctl
