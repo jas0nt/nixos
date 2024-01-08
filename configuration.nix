@@ -18,24 +18,41 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    hostName = "nixos"; # Define your hostname.
+    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  };
 
-  # bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
+  hardware = {
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;
+    pulseaudio.enable = true;
+  };
 
-  services.devmon.enable = true;
-  services.gvfs.enable = true; 
-  services.udisks2.enable = true;
+  security.rtkit.enable = true;  # PulseAudio uses this
+  sound.enable = true;
+
+  services = {
+    blueman.enable = true;
+    openssh.enable = true;  # Enable the OpenSSH daemon.
+    devmon.enable = true;
+    gvfs.enable = true; 
+    udisks2.enable = true;
+    printing.enable = true;  # Enable CUPS to print documents.
+    pipewire = {  # Enable sound with pipewire.
+      enable = false;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+    # services.xserver.libinput.enable = true;  Enable touchpad support.
+  };
+
+  # docker
+  virtualisation.docker.enable = true;
 
   console = {
     earlySetup = true;
@@ -43,22 +60,8 @@
     font = "${pkgs.terminus_font}/share/consolefonts/ter-114n.psf.gz";
     keyMap = "us";
     colors = [
-        "282a36"
-        "ff5555"
-        "50fa7b"
-        "f1fa8c"
-        "bd93f9"
-        "ff79c6"
-        "8be9fd"
-        "f8f8f2"
-        "6272a4"
-        "ff7777"
-        "70fa9b"
-        "ffb86c"
-        "cfa9ff"
-        "ff88e8"
-        "97e2ff"
-        "ffffff"
+        "282a36" "ff5555" "50fa7b" "f1fa8c" "bd93f9" "ff79c6" "8be9fd" "f8f8f2"
+        "6272a4" "ff7777" "70fa9b" "ffb86c" "cfa9ff" "ff88e8" "97e2ff" "ffffff"
     ];
   };
 
@@ -108,22 +111,34 @@
     };
   };
 
-  # Enable the X11 windowing system.
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    #NIXOS_OZONE_WL = "1";  # # Hint Electon apps to use wayland
+    EDITOR = "vim";
+    BROWSER = "firefox";
+    TERMINAL = "alacritty";
+  };
+
+  # X
   services.xserver = {
     enable = true;
-
     # Configure keymap in X11
     layout = "us";
     #xkbVariant = "qwerty";
 
+    excludePackages = [ pkgs.xterm ];
+
     displayManager = {
-        sddm = {
-            enable = true;
-            wayland.enable = true;
-        };
-        defaultSession = "hyprland";
-        setupCommands = "Hyprland";
-        #defaultSession = "none+awesome";
+      # Enable automatic login for the user.
+      autoLogin.enable = true;
+      autoLogin.user = "jason";
+      sddm = {
+          enable = true;
+          wayland.enable = true;
+      };
+      defaultSession = "hyprland";
+      setupCommands = "Hyprland";
+      #defaultSession = "none+awesome";
     };
 
     windowManager.awesome = {
@@ -133,12 +148,39 @@
         luadbi-mysql # Database abstraction layer
       ];
     };
+
+    xautolock = {
+      enable = false;
+      locker = "${pkgs.swaylock}/bin/swaylock";
+      nowlocker = "${pkgs.swaylock}/bin/swaylock";
+      time = 5;
+    };
   };
 
-  programs.hyprland = {
-    enable = true;
-    enableNvidiaPatches = true;
-    xwayland.enable = true;
+  security.pam.services.swaylock.fprintAuth = false;  # Fix swaylock
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  programs = {
+    hyprland = {
+      enable = true;
+      enableNvidiaPatches = true;
+      xwayland.enable = true;
+    };
+
+    waybar = {
+      enable = true;
+      package = pkgs.waybar;
+    };
+
+    fish.enable = true;
+
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    };
   };
 
   xdg.portal = {
@@ -146,60 +188,6 @@
     wlr.enable = true;
   };
 
-  programs.waybar = {
-    enable = true;
-    package = pkgs.waybar;
-  };
-
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = false;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  programs.fish.enable = true;
-
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "jason";
-
-  # docker
-  virtualisation.docker.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    #NIXOS_OZONE_WL = "1";  # # Hint Electon apps to use wayland
-    EDITOR = "vim";
-    BROWSER = "firefox";
-    TERMINAL = "alacritty";
-  };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -213,6 +201,7 @@
 
     hyprpaper
     picom
+    swaylock
 
     # Modern unix tools
     htop bottom bat eza broot jq du-dust duf fd procs httpie tree fzf ripgrep
@@ -240,16 +229,11 @@
     nwg-look
   ];
 
-  services.xserver.excludePackages = [ pkgs.xterm ];
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

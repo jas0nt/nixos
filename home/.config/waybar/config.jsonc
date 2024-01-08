@@ -184,6 +184,7 @@
   },
   "custom/launcher": {
     "format": " ",
-    "on-click": "hyprctl dispatch workspace empty"
+    "on-click": "hyprctl dispatch workspace empty",
+    "on-click-right": "swaylock"
   }
 }
