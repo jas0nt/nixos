@@ -73,7 +73,7 @@
             gtk.enable = true;
             package = pkgs.bibata-cursors;
             name = "Bibata-Modern-Ice";
-            size = 14;
+            size = 20;
         };
 
         gtk = {
@@ -81,7 +81,7 @@
             cursorTheme = {
                 package = pkgs.bibata-cursors;
                 name = "Bibata-Modern-Ice";
-                size = 14;
+                size = 20;
             };
             iconTheme = {
                 package = pkgs.beauty-line-icon-theme;
