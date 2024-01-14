@@ -92,7 +92,7 @@
         home.packages = [
             pkgs.pasystray
             pkgs.pulsemixer
-            pkgs.feh
+            pkgs.timg pkgs.qview pkgs.cinnamon.pix # image viewer
 
             (pkgs.python3.withPackages (ps: with ps; [
                 pip virtualenv howdoi
