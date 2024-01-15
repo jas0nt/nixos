@@ -36,22 +36,38 @@ window#waybar {
 }
 
 #workspaces button {
-    border-radius: 50%;
     padding: 0.25em 0.25em;
-    background: @background;
+    margin: 0px 0.25em;
     color: @foreground;
 }
 
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    background-image: linear-gradient(0deg, @selection, @background-darker);
+    background: @background-darker;
+    color: @comment;
+    /* background-image: linear-gradient(0deg, @selection, @background-darker); */
 }
 #workspaces button.active {
-    background-image: linear-gradient(0deg, @purple, @selection);
+    color: @purple;
 }
 #workspaces button.urgent {
-    background-image: linear-gradient(0deg, @red, @background-darker);
+    color: @red;
+}
+#workspaces button.special {
+    color: @yellow;
+}
+#workspaces button.special.active {
+    color: @pink;
+}
+
+#taskbar {
+    padding-left: 0.25em;
+}
+#taskbar button.hover {
+    background: @background;
+    color: @foreground;
+    /* background-image: linear-gradient(0deg, @selection, @background-darker); */
 }
 #taskbar button.active {
     background-image: linear-gradient(0deg, @selection, @background-darker);
