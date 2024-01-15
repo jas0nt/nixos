@@ -44,7 +44,7 @@ window#waybar {
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    background: @background-darker;
+    background: transparent;
     color: @comment;
     /* background-image: linear-gradient(0deg, @selection, @background-darker); */
 }
@@ -57,19 +57,16 @@ window#waybar {
 #workspaces button.special {
     color: @yellow;
 }
-#workspaces button.special.active {
-    color: @pink;
-}
 
 #taskbar {
     padding-left: 0.25em;
 }
-#taskbar button.hover {
-    background: @background;
-    color: @foreground;
-    /* background-image: linear-gradient(0deg, @selection, @background-darker); */
-}
-#taskbar button.active {
+#taskbar button.active,
+#taskbar button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    /* background: transparent; */
+    color: @comment;
     background-image: linear-gradient(0deg, @selection, @background-darker);
 }
 
@@ -92,9 +89,8 @@ window#waybar {
     background: transparent;
 }
 
-#custom-launcher button:hover {
-    background-color: #5277C3;
-    color: transparent;
+#custom-launcher:hover {
+    color: @red;
 }
 
 #custom-power {
@@ -164,8 +160,6 @@ window#waybar {
 #window {
     background: transparent;
     margin: 0 0.5em;
-    /* padding-left: 15px; */
-    /* padding-right: 15px; */
 }
 
 #cpu,
@@ -175,9 +169,6 @@ window#waybar {
     border-radius: 30%;
     margin: 0 0.15em;
     padding: 0 0.1em;
-    /* margin-left: 5px; */
-    /* margin-right: 5px; */
-    /* padding: 0px 10px 0px 10px; */
     font-weight: bold;
 }
 
