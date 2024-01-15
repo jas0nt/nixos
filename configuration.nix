@@ -219,7 +219,7 @@
     wget
     neofetch
     nnn ranger
-    unzip
+    unzip p7zip
 
     rofi
     dmenu
