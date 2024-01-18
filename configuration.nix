@@ -49,6 +49,7 @@
       pulse.enable = true;
     };
     # services.xserver.libinput.enable = true;  Enable touchpad support.
+    aria2.enable = true;
   };
 
   # docker

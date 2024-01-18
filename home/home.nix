@@ -120,6 +120,7 @@
             pkgs.motrix
             pkgs.localsend
             pkgs.quickemu
+            pkgs.aria2
         ];
 
         programs = {
