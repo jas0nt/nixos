@@ -224,7 +224,7 @@
 
     rofi
     dmenu
-    firefox
+    firefox-wayland
     pcmanfm
     clash-meta
     networkmanagerapplet
