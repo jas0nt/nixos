@@ -22,7 +22,8 @@
   networking = {
     networkmanager.enable = true;
     hostName = "nixos"; # Define your hostname.
-    # proxy.default = "http://user:password@proxy:port/";
+    # proxy.default = "http://127.0.0.1:7890";
+    # proxy.allProxy = "socks5://127.0.0.1:7890";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
 
@@ -95,7 +96,8 @@
     enableDefaultPackages = true;
     packages = with pkgs; [ 
       wqy_zenhei  #steam
-      nerdfonts
+      nerdfonts 
+      terminus-nerdfont
       noto-fonts
       noto-fonts-cjk
       noto-fonts-cjk-sans

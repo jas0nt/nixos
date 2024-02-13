@@ -92,10 +92,11 @@
         home.packages = [
             pkgs.pasystray
             pkgs.pulsemixer
-            pkgs.timg pkgs.qview pkgs.cinnamon.pix # image viewer
+            pkgs.timg pkgs.qview pkgs.cinnamon.pix pkgs.nomacs # image viewer
 
             (pkgs.python3.withPackages (ps: with ps; [
-                pip virtualenv howdoi
+                pip virtualenv
+                epc orjson sexpdata six setuptools paramiko rapidfuzz
             ]))
             pkgs.jdk
             pkgs.lua
@@ -118,7 +119,7 @@
             pkgs.vlc
             pkgs.qbittorrent
             pkgs.motrix
-            pkgs.localsend
+            pkgs.localsend pkgs.libsForQt5.kdeconnect-kde
             pkgs.quickemu
             pkgs.aria2
         ];
@@ -136,7 +137,7 @@
         programs.fish = {
             enable = true;
             shellAliases = {
-                fuckGFW  = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890";
+                fuckGFW  = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890; and export all_proxy=socks5://127.0.0.1:7890";
                 showcert = "nmap -p 443 --script ssl-cert";
             };
             shellAbbrs = {
