@@ -122,6 +122,7 @@
             pkgs.localsend pkgs.libsForQt5.kdeconnect-kde
             pkgs.quickemu
             pkgs.aria2
+            pkgs.telegram-desktop
         ];
 
         programs = {
