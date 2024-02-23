@@ -25,6 +25,10 @@
     # proxy.default = "http://127.0.0.1:7890";
     # proxy.allProxy = "socks5://127.0.0.1:7890";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    firewall = {
+        enable = true;
+        allowedTCPPorts = [ 8080 ];
+    };
   };
 
   hardware = {
@@ -204,23 +208,35 @@
     nmap
 
     where-is-my-sddm-theme
-    hyprpaper
+    hyprpaper swww
     picom
     swaylock
+    pasystray pulsemixer pavucontrol # audio control
+    timg qview cinnamon.pix nomacs # image viewer
+    alacritty
 
     # Modern unix tools
-    htop bottom bat eza broot jq du-dust duf fd procs httpie tree fzf ripgrep
-    tmux
-    cava
-    genact
-    lolcat
-    nms
+    btop htop bottom glances # top
+    bat # cat
+    choose # cut
+    du-dust dua # du
+    duf # df
+    eza # ls
+    fd # find
+    httpie # curl
+    procs # ps
+    ripgrep # grep
+    jq fx # json
+    tree
+    cht-sh
+    tmux byobu
+    neofetch
+    cava genact lolcat nms
     systemctl-tui
     bluetuith
     git lazygit tig
     vim
     wget
-    neofetch
     nnn ranger
     unzip p7zip
 

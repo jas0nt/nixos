@@ -89,40 +89,39 @@
             };
         };
 
-        home.packages = [
-            pkgs.pasystray
-            pkgs.pulsemixer
-            pkgs.timg pkgs.qview pkgs.cinnamon.pix pkgs.nomacs # image viewer
-
-            (pkgs.python3.withPackages (ps: with ps; [
+        home.packages = with pkgs; [
+            (python3.withPackages (ps: with ps; [
                 pip virtualenv
                 epc orjson sexpdata six setuptools paramiko rapidfuzz
             ]))
-            pkgs.jdk
-            pkgs.lua
-            pkgs.nodejs
+            nodejs
+            # nodePackages."@microsoft/inshellisense"
+            rustc cargo rustfmt
+            jdk
+            lua
 
-            pkgs.emacs pkgs.librime pkgs.emacsPackages.rime
-            pkgs.vscode-fhs
-            pkgs.lunarvim
+            emacs librime emacsPackages.rime
+            vscode-fhs
+            lunarvim
 
-            pkgs.alacritty
-            pkgs.sway-launcher-desktop
-            pkgs.calcure
-            pkgs.playerctl
-            pkgs.fortune pkgs.pokemonsay
+            sway-launcher-desktop
+            calcure
+            playerctl
+            fortune pokemonsay
+            miniserve
 
-            pkgs.wpsoffice
-            pkgs.qq
-            pkgs.spotify pkgs.cmus
-            pkgs.mpv
-            pkgs.vlc
-            pkgs.qbittorrent
-            pkgs.motrix
-            pkgs.localsend pkgs.libsForQt5.kdeconnect-kde
-            pkgs.quickemu
-            pkgs.aria2
-            pkgs.telegram-desktop
+            wpsoffice
+            qq
+            spotify cmus
+            mpv
+            vlc
+            qbittorrent
+            motrix
+            localsend libsForQt5.kdeconnect-kde
+            quickemu
+            aria2
+            telegram-desktop
+            obs-studio
         ];
 
         programs = {
@@ -152,7 +151,22 @@
             };
         };
 
-        programs.autojump = {
+        programs.navi = {
+            enable = true;
+            enableFishIntegration = true;
+        };
+
+        programs.fzf = {
+            enable = true;
+            enableFishIntegration = true;
+        };
+
+        programs.broot = {
+            enable = true;
+            enableFishIntegration = true;
+        };
+
+        programs.zoxide = {
             enable = true;
             enableFishIntegration = true;
         };
