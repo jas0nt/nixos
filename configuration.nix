@@ -208,7 +208,7 @@
     nmap
 
     where-is-my-sddm-theme
-    hyprpaper swww
+    hyprpaper swww waypaper
     picom
     swaylock
     pasystray pulsemixer pavucontrol # audio control
