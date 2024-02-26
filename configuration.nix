@@ -124,7 +124,7 @@
     #NIXOS_OZONE_WL = "1";  # # Hint Electon apps to use wayland
     EDITOR = "vim";
     BROWSER = "firefox";
-    TERMINAL = "alacritty";
+    TERMINAL = "kitty";
   };
 
   # X
@@ -207,6 +207,7 @@
     gnumake libgccjit cmake
     openssl
     nmap
+    wl-clipboard
 
     where-is-my-sddm-theme
     hyprpaper swww waypaper
@@ -214,7 +215,7 @@
     swaylock
     pasystray pw-volume pwvucontrol # audio control #pavucontrol pulsemixer
     timg qview cinnamon.pix nomacs # image viewer
-    alacritty
+    kitty
 
     # Modern unix tools
     btop htop bottom glances # top
@@ -238,7 +239,7 @@
     git lazygit tig
     vim
     wget
-    nnn ranger
+    ranger
     unzip p7zip
 
     rofi

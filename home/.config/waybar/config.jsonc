@@ -24,7 +24,7 @@
   ],
   "clock": {
     "format": "{:%H:%M  %a  %b %d}",
-    "on-click": "pkill calcure || $TERMINAL --class myfloating -e calcure"
+    "on-click": "pkill calcure || $TERMINAL --class myfloating calcure"
   },
   "hyprland/window": {
     "format": "{title}",
@@ -173,7 +173,7 @@
   },
   "custom/launcher": {
     "format": " ",
-    "on-click": "pkill btop || $TERMINAL --class myfloatingl -e btop",
+    "on-click": "pkill btop || $TERMINAL --class myfloatingl btop",
     "on-click-right": "fish -c 'my_locker'"
   }
 }
