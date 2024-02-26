@@ -64,9 +64,9 @@
         };
 
         home.sessionVariables = {
-            EDITOR = "vim";
+            EDITOR = "lvim";
             BROWSER = "firefox";
-            TERMINAL = "alacritty";
+            TERMINAL = "kitty";
         };
 	
         home.pointerCursor = {
@@ -132,6 +132,7 @@
             enable = true;
             userName = "Jas0nT";
             userEmail = "taoeta@gmail.com";
+            delta.enable = true;
         };
 
         programs.fish = {
@@ -141,6 +142,7 @@
                 showcert = "nmap -p 443 --script ssl-cert";
             };
             shellAbbrs = {
+                icat = "kitten icat";
                 ll = "eza --icons -l";
                 la = "eza --icons -la";
             };
@@ -150,10 +152,11 @@
                 my_audio_down.body     = "pw-volume change -0.1%";
                 my_launcher.body       = "sway-launcher-desktop";
                 my_locker.body         = "swaylock";
-                my_file_manager.body   = "nnn -de";
+                my_file_manager.body   = "ranger";
                 my_screenshot.body     = "grimblast copysave area";
 
                 fish_greeting.body     = "fortune -s | pokemonsay -N";
+                rgc.body               = "rg --json $argv | delta";
             };
         };
 
@@ -181,26 +184,13 @@
             package = pkgs.starship;
             enable = true;
             enableFishIntegration = true;
-            settings = {
-                cmd_duration.style = "bold #f1fa8c";
-                directory.style = "bold #50fa7b";
-                hostname.style = "bold #ff5555";
-                git_branch.style = "bold #ff79c6";
-                git_status.style = "bold #ff5555";
-                username = {
-                  format = "[$user]($style) on ";
-                  style_user = "bold #bd93f9";
-                };
-                character = {
-                    success_symbol = "[>](bold #f8f8f2)";
-                    error_symbol = "[x](bold #ff5555)";
-                };
-            };
+            settings = pkgs.lib.importTOML .config/starship/starship.toml;
         };
 
         home.file = {
             ".config/autostart"      = { recursive = true; source = .config/autostart; };
             ".config/alacritty"      = { recursive = true; source = .config/alacritty; };
+            ".config/kitty"          = { recursive = true; source = .config/kitty; };
             ".config/hypr"           = { recursive = true; source = .config/hypr; };
             ".config/waybar"         = { recursive = true; source = .config/waybar; };
             ".config/swaylock"       = { recursive = true; source = .config/swaylock; };
