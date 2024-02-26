@@ -145,9 +145,15 @@
                 la = "eza --icons -la";
             };
             functions = {
-                fish_greeting = {
-                    body = "fortune -s | pokemonsay -N";
-                };
+                my_audio_mute.body     = "pw-volume mute toggle";
+                my_audio_up.body       = "pw-volume change +0.1%";
+                my_audio_down.body     = "pw-volume change -0.1%";
+                my_launcher.body       = "sway-launcher-desktop";
+                my_locker.body         = "swaylock";
+                my_file_manager.body   = "nnn -de";
+                my_screenshot.body     = "grimblast copysave area";
+
+                fish_greeting.body     = "fortune -s | pokemonsay -N";
             };
         };
 
@@ -193,15 +199,16 @@
         };
 
         home.file = {
-            ".config/autostart"     = { recursive = true; source = .config/autostart; };
-            ".config/alacritty"     = { recursive = true; source = .config/alacritty; };
-            ".config/hypr"          = { recursive = true; source = .config/hypr; };
-            ".config/waybar"        = { recursive = true; source = .config/waybar; };
-            ".config/awesome"       = { recursive = true; source = .config/awesome; };
-            ".config/fontconfig"    = { recursive = true; source = .config/fontconfig; };
-            ".config/ranger"        = { recursive = true; source = .config/ranger; };
-            ".config/rofi"          = { recursive = true; source = .config/rofi; };
-            ".config/systemd"       = { recursive = true; source = .config/systemd; };
+            ".config/autostart"      = { recursive = true; source = .config/autostart; };
+            ".config/alacritty"      = { recursive = true; source = .config/alacritty; };
+            ".config/hypr"           = { recursive = true; source = .config/hypr; };
+            ".config/waybar"         = { recursive = true; source = .config/waybar; };
+            ".config/swaylock"       = { recursive = true; source = .config/swaylock; };
+            ".config/awesome"        = { recursive = true; source = .config/awesome; };
+            ".config/fontconfig"     = { recursive = true; source = .config/fontconfig; };
+            ".config/ranger"         = { recursive = true; source = .config/ranger; };
+            ".config/rofi"           = { recursive = true; source = .config/rofi; };
+            ".config/systemd/user"   = { recursive = true; source = .config/systemd/user; };
 
             #".xprofile".source = ./.xprofile;
             ".config/mimeapps.list".source = .config/mimeapps.list;

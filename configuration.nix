@@ -34,7 +34,7 @@
   hardware = {
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
-    pulseaudio.enable = true;
+    pulseaudio.enable = false;
   };
 
   security.rtkit.enable = true;  # PulseAudio uses this
@@ -48,10 +48,11 @@
     udisks2.enable = true;
     printing.enable = true;  # Enable CUPS to print documents.
     pipewire = {  # Enable sound with pipewire.
-      enable = false;
+      enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      jack.enable = true;
     };
     # services.xserver.libinput.enable = true;  Enable touchpad support.
     aria2.enable = true;
@@ -211,7 +212,7 @@
     hyprpaper swww waypaper
     picom
     swaylock
-    pasystray pulsemixer pavucontrol # audio control
+    pasystray pw-volume pwvucontrol # audio control #pavucontrol pulsemixer
     timg qview cinnamon.pix nomacs # image viewer
     alacritty
 

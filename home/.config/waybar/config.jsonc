@@ -165,15 +165,15 @@
         "󱄡"
       ]
     },
-    "on-click": "pulsemixer --toggle-mute",
-    "on-click-right": "pkill pavucontrol || pavucontrol",
-    "on-scroll-up": "pulsemixer --change-volume +1",
-    "on-scroll-down": "pulsemixer --change-volume -1",
+    "on-click": "fish -c 'my_audio_mute'",
+    "on-click-right": "pkill pwvucontrol || pwvucontrol",
+    "on-scroll-up": "fish -c 'my_audio_up'",
+    "on-scroll-down": "fish -c 'my_audio_down'",
     "scroll-step": 5
   },
   "custom/launcher": {
     "format": " ",
     "on-click": "pkill btop || $TERMINAL --class myfloatingl -e btop",
-    "on-click-right": "swaylock"
+    "on-click-right": "fish -c 'my_locker'"
   }
 }

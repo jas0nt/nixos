@@ -1,0 +1,11 @@
+[Unit]
+Description=Connect Bluetooth Audio
+Requires=pipewire.service
+
+[Service]
+Type=simple
+ExecStart=/run/current-system/sw/bin/bluetoothctl connect D8:37:3B:66:E2:64
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
