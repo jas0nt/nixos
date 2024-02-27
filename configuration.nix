@@ -8,7 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      /home/jason/nixos/home/home.nix
+
+      # sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+      # sudo nix-channel --update
+      <home-manager/nixos>
     ];
 
   # mirror
@@ -266,4 +269,13 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
+
+  # home-manager
+  users.users.jason = {
+    isNormalUser = true;
+    description = "jason";
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    shell = pkgs.fish;
+  };
+  home-manager.useGlobalPkgs = true;
 }
