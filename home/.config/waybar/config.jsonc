@@ -52,7 +52,7 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "ignore-list": [
-       "Alacritty"
+       "kitty"
     ],
   },
   "custom/playerlabel": {

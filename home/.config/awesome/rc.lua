@@ -12,7 +12,7 @@ local mytable = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local modkey = "Mod4"
 local altkey = "Mod1"
-local terminal = "alacritty"
+local terminal = "kitty"
 local vi_focus = false -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
 local editor = os.getenv("EDITOR") or "vim"
 
@@ -655,7 +655,7 @@ awful.rules.rules = {
         properties = { screen = 1, tag = "7", switchtotag = true }
     },
     {
-        rule = { class = "Alacritty" },
+        rule = { class = "kitty" },
         properties = { screen = 1, tag = "1", switchtotag = true }
     },
     {
