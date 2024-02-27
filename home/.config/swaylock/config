@@ -1,4 +1,4 @@
-image=~/nixos/home/wallpaper/wallpaper.jpg
+image=~/.config/home-manager/wallpaper/wallpaper.jpg
 color=282a36
 inside-color=1F202A
 line-color=1F202A
