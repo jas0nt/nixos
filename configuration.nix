@@ -216,7 +216,7 @@
     hyprpaper swww waypaper
     picom
     swaylock
-    pasystray pw-volume pwvucontrol # audio control #pavucontrol pulsemixer
+    pasystray pulsemixer pwvucontrol # audio control #pavucontrol 
     timg qview cinnamon.pix nomacs # image viewer
     kitty
 

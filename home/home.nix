@@ -88,18 +88,21 @@
   programs.fish = {
     enable = true;
     shellAliases = {
+      lock = "swaylock";
+      logout = "loginctl terminate-user $USER";
       fuckGFW  = "export http_proxy=http://127.0.0.1:7890; and export https_proxy=http://127.0.0.1:7890; and export all_proxy=socks5://127.0.0.1:7890";
-      showcert = "nmap -p 443 --script ssl-cert";
     };
     shellAbbrs = {
       icat = "kitten icat";
       ll = "eza --icons -l";
       la = "eza --icons -la";
+      showcert = "nmap -p 443 --script ssl-cert";
+      dota = "steam steam://rungameid/570";
     };
     functions = {
-      my_audio_mute.body     = "pw-volume mute toggle";
-      my_audio_up.body       = "pw-volume change +0.1%";
-      my_audio_down.body     = "pw-volume change -0.1%";
+      my_audio_mute.body     = "pulsemixer --toggle-mute";
+      my_audio_up.body       = "pulsemixer --change-volume +1";
+      my_audio_down.body     = "pulsemixer --change-volume -1";
       my_launcher.body       = "sway-launcher-desktop";
       my_locker.body         = "swaylock";
       my_file_manager.body   = "ranger";
