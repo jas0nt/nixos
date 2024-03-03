@@ -32,6 +32,10 @@
         enable = true;
         allowedTCPPorts = [ 8080 ];
     };
+    # extraHosts =
+    #   ''
+    #     185.199.108.133 raw.githubusercontent.com
+    #   '';
   };
 
   hardware = {
@@ -103,9 +107,8 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [ 
-      wqy_zenhei  #steam
-      nerdfonts 
-      terminus-nerdfont
+      wqy_zenhei  #steam font
+      nerdfonts  #terminus-nerdfont
       noto-fonts
       noto-fonts-cjk
       noto-fonts-cjk-sans

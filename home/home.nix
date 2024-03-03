@@ -25,6 +25,10 @@
       name = "Bibata-Modern-Ice";
       size = 20;
     };
+    theme = {
+      package = pkgs.dracula-theme;
+      name = "Dracula";
+    };
     iconTheme = {
       package = pkgs.beauty-line-icon-theme;
       name = "BeautyLine";
@@ -62,13 +66,10 @@
     wpsoffice
     qq
     spotify cmus
-    mpv
-    vlc
-    qbittorrent
-    motrix
+    mpv vlc
+    qbittorrent motrix aria2
     localsend libsForQt5.kdeconnect-kde
     quickemu
-    aria2
     telegram-desktop
     obs-studio
   ];
