@@ -23,7 +23,7 @@
     "custom/mytray",
   ],
   "clock": {
-    "format": "{:%H:%M  %a  %b %d}",
+    "format": "{:%H:%M %a %b %d}",
     "on-click": "pkill calcure || $TERMINAL --class myfloating calcure"
   },
   "hyprland/window": {

@@ -150,6 +150,7 @@
     ".local/share/fcitx5/rime/default.custom.yaml".source                  = .local/share/fcitx5/rime/default.custom.yaml;
     ".local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml".source      = .local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml;
 
+    ".local/share/fonts"                                                   = { recursive = true; source = .local/share/fonts; };
     ".config/autostart"                                                    = { recursive = true; source = .config/autostart; };
     ".config/alacritty"                                                    = { recursive = true; source = .config/alacritty; };
     ".config/kitty"                                                        = { recursive = true; source = .config/kitty; };
@@ -157,7 +158,7 @@
     ".config/waybar"                                                       = { recursive = true; source = .config/waybar; };
     ".config/swaylock"                                                     = { recursive = true; source = .config/swaylock; };
     ".config/awesome"                                                      = { recursive = true; source = .config/awesome; };
-    ".config/fontconfig"                                                   = { recursive = true; source = .config/fontconfig; };
+    # ".config/fontconfig"                                                   = { recursive = true; source = .config/fontconfig; };
     ".config/ranger"                                                       = { recursive = true; source = .config/ranger; };
     ".config/rofi"                                                         = { recursive = true; source = .config/rofi; };
     ".config/systemd/user"                                                 = { recursive = true; source = .config/systemd/user; };

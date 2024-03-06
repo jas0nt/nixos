@@ -20,7 +20,7 @@ configuration {
 }
 
 * {
-    font: "NotoSans Nerd Font 18";
+    font: "SF Pro 18";
 }
 
 * {

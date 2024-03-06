@@ -27,7 +27,7 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Source Code Pro
+    family: SF Pro
     style: Regular
   # Point size
   size: 13.0
