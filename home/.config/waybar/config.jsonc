@@ -1,4 +1,5 @@
 {
+  "output": "HDMI-A-1",
   "position": "bottom",
   "layer": "top",
   "height": 10,
@@ -56,7 +57,7 @@
     ],
   },
   "custom/playerlabel": {
-    "format": "<span>{icon} {}</span>",
+    "format": "<span>{icon}{}</span>",
     "return-type": "json",
     "max-length": 48,
     "exec": "playerctl -i firefox -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",

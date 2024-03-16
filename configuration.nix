@@ -29,7 +29,7 @@
     # proxy.allProxy = "socks5://127.0.0.1:7890";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
     firewall = {
-        enable = true;
+        enable = false;
         allowedTCPPorts = [ 8080 ];
     };
     # extraHosts =
@@ -224,6 +224,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    libGL
+
     xwayland
     qt6.qtwayland
     killall
@@ -267,7 +269,7 @@
 
     rofi
     dmenu
-    firefox-wayland
+    firefox-bin
     pcmanfm
     clash-meta
     networkmanagerapplet

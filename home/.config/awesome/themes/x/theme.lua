@@ -8,7 +8,7 @@ local my_table                                  = awful.util.table or gears.tabl
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/x"
-theme.wallpaper                                 = theme.dir .. "/wall"
+theme.wallpaper                                 = os.getenv("HOME") .. "/.config/home-manager/wallpaper/wallpaper.jpg"
 theme.font                                      = "SF Pro " .. dpi(6)
 theme.fg_normal                                 = "#DDDDFF"
 theme.fg_focus                                  = "#bd93f9"
@@ -18,7 +18,7 @@ theme.bg_focus                                  = "#313131"
 theme.bg_urgent                                 = "#1A1A1A"
 theme.border_width                              = dpi(1.5)
 theme.border_normal                             = "#3F3F3F"
-theme.border_focus                              = "#ff79c6"
+theme.border_focus                              = "#bd93f9"
 theme.border_marked                             = "#CC9393"
 theme.tasklist_bg_focus                         = theme.bg_urgent
 theme.tasklist_bg_normal                        = theme.bg_normal
