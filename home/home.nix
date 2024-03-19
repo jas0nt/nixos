@@ -15,7 +15,7 @@
     gtk.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
-    size = 20;
+    size = 18;
   };
 
   gtk = {
@@ -23,7 +23,7 @@
     cursorTheme = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-      size = 20;
+      size = 18;
     };
     theme = {
       package = pkgs.dracula-theme;
@@ -59,7 +59,7 @@
 
     sway-launcher-desktop
     calcure
-    playerctl
+    playerctl mpc-cli
     fortune pokemonsay
     miniserve
 

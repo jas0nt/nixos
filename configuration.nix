@@ -108,7 +108,7 @@
     enableDefaultPackages = true;
     packages = with pkgs; [ 
       wqy_zenhei  #steam font
-      (nerdfonts.override { fonts = [ "FiraCode" "Noto" ]; })
+      nerdfonts
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
@@ -166,11 +166,12 @@
       sddm = {
           enable = true;
           theme = "where_is_my_sddm_theme";
-          wayland.enable = true;
+          wayland.enable = false;
       };
-      defaultSession = "hyprland";
-      setupCommands = "Hyprland";
-      #defaultSession = "none+awesome";
+      # defaultSession = "hyprland";
+      # setupCommands = "Hyprland";
+
+      defaultSession = "none+awesome";
     };
 
     windowManager.awesome = {
@@ -241,6 +242,7 @@
     pasystray pulsemixer pwvucontrol # audio control #pavucontrol 
     timg qview cinnamon.pix nomacs # image viewer
     kitty
+    eww
 
     # Modern unix tools
     btop htop bottom glances # top

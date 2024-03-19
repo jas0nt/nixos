@@ -17,7 +17,7 @@ local vi_focus = false -- vi-like client focus https://github.com/lcpz/awesome-c
 local editor = os.getenv("EDITOR") or "vim"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "x" }
+awful.util.tagnames = { "󰮯", "2", "3", "4", "5", "6", "7", "8", "9", "󰊠" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.max,
@@ -157,26 +157,10 @@ root.buttons(mytable.join(awful.button({}, 4, awful.tag.viewnext), awful.button(
 globalkeys =
     gears.table.join(
         awful.key(
-            { modkey },
-            "XF86AudioRaiseVolume",
-            function()
-                awful.util.spawn("pulsemixer --change-volume +1")
-            end,
-            { description = "Volumn Up", group = "awesome" }
-        ),
-        awful.key(
-            { modkey },
-            "XF86AudioLowerVolume",
-            function()
-                awful.util.spawn("pulsemixer --change-volume -1")
-            end,
-            { description = "Volumn Down", group = "awesome" }
-        ),
-        awful.key(
             {},
             "XF86AudioRaiseVolume",
             function()
-                awful.util.spawn("pulsemixer --change-volume +5")
+                awful.util.spawn("fish -c 'my_audio_up'")
             end,
             { description = "Volumn Up", group = "awesome" }
         ),
@@ -184,7 +168,7 @@ globalkeys =
             {},
             "XF86AudioLowerVolume",
             function()
-                awful.util.spawn("pulsemixer --change-volume -5")
+                awful.util.spawn("fish -c 'my_audio_down'")
             end,
             { description = "Volumn Down", group = "awesome" }
         ),
@@ -192,7 +176,7 @@ globalkeys =
             {},
             "XF86AudioMute",
             function()
-                awful.util.spawn("pulsemixer --toggle-mute")
+                awful.util.spawn("fish -c 'my_audio_mute'")
             end,
             { description = "Volumn Mute", group = "awesome" }
         ),
@@ -403,7 +387,7 @@ globalkeys =
             { modkey },
             "e",
             function()
-                awful.util.spawn(awful.util.terminal .. " --class fm -e nnn -de")
+                awful.util.spawn(awful.util.terminal .. " --class fm -e ranger")
             end,
             { description = "Files", group = "launcher" }
         ),
