@@ -21,7 +21,7 @@ local theme_config_dir = gears.filesystem.get_configuration_dir() .. "/configura
 -- define default apps (global variable so other components can access it)
 apps = {
     network_manager = "networkmanagerapplet", -- recommended: nm-connection-editor
-    power_manager = "",                      -- recommended: xfce4-power-manager
+    power_manager = "",                       -- recommended: xfce4-power-manager
     terminal = "kitty",
     filemngr_cli = "kitty --class fm -e ranger",
     audio_cli = "kitty --class pulsemixer -e pulsemixer",

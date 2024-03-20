@@ -28,24 +28,6 @@ local rules = {}
 
 -- return a table of client rules including provided keys / buttons
 function rules.create(clientkeys, clientbuttons)
-   local rofi_rule = {}
-
-   if beautiful.name == "mirage" then
-      rofi_rule = {
-         rule_any = {name = {"rofi"}},
-         properties = {floating = true, titlebars_enabled = false},
-         callback = function(c)
-            if beautiful.name == "mirage" then
-               awful.placement.left(c)
-            end
-         end
-      }
-   else rofi_rule = {
-         rule_any = {name = {"rofi"}},
-         properties = {maximized = true, floating = true, titlebars_enabled = false},
-      }
-   end
-
    return {
       -- All clients will match this rule.
       {
@@ -87,7 +69,8 @@ function rules.create(clientkeys, clientbuttons)
             type = {
                "dialog"
             }
-         }, properties = {floating = true}
+         },
+         properties = { floating = true }
       },
 
       -- Fullscreen clients
@@ -96,12 +79,12 @@ function rules.create(clientkeys, clientbuttons)
             class = {
                "Terraria.bin.x86",
             },
-         }, properties = {fullscreen = true}
+         },
+         properties = { fullscreen = true }
       },
-
       {
          rule_any = {
-               type = { "normal", "dialog" }
+            type = { "normal", "dialog" }
          },
          properties = { titlebars_enabled = false }
       },
@@ -138,16 +121,18 @@ function rules.create(clientkeys, clientbuttons)
          properties = { screen = 1, tag = "8", switchtotag = true }
       },
       {
-         rule = { class = {
-            "qBittorrent",
-            "qbittorrent"
-         }},
+         rule_any = {
+            class = {
+               "qBittorrent",
+               "qbittorrent"
+            }
+         },
          properties = { screen = 1, tag = "9", switchtotag = true }
       },
 
       -- Visualizer
       {
-         rule_any = {name = {"cava"}},
+         rule_any = { name = { "cava" } },
          properties = {
             floating = true,
             maximized_horizontal = true,
@@ -159,19 +144,16 @@ function rules.create(clientkeys, clientbuttons)
             height = screen_height * 0.40,
             opacity = 0.6
          },
-         callback = function (c)
+         callback = function(c)
             decorations.hide(c)
             awful.placement.bottom(c)
          end
       },
 
-      -- rofi rule determined above
-      rofi_rule,
-
       -- File chooser dialog
       {
-         rule_any = {role = {"GtkFileChooserDialog"}},
-         properties = {floating = true, width = screen_width * 0.55, height = screen_height * 0.65}
+         rule_any = { role = { "GtkFileChooserDialog" } },
+         properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.65 }
       },
 
       {
@@ -183,8 +165,9 @@ function rules.create(clientkeys, clientbuttons)
                "pulsemixer",
                "qview", "qView",
             },
-         name = {"Bluetooth Devices"}},
-         properties = {floating = true, width = screen_width * 0.55, height = screen_height * 0.55}
+            name = { "Bluetooth Devices" }
+         },
+         properties = { floating = true, width = screen_width * 0.55, height = screen_height * 0.55 }
       },
       {
          rule_any = {
@@ -192,7 +175,7 @@ function rules.create(clientkeys, clientbuttons)
                "myfloatingl",
             },
          },
-         properties = {floating = true, width = screen_width * 0.80, height = screen_height * 0.80}
+         properties = { floating = true, width = screen_width * 0.80, height = screen_height * 0.80 }
       },
    }
 end
