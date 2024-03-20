@@ -13,9 +13,10 @@
 
   home.pointerCursor = {
     gtk.enable = true;
+    x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
-    size = 18;
+    size = 24;
   };
 
   gtk = {
@@ -23,7 +24,7 @@
     cursorTheme = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-      size = 18;
+      size = 24;
     };
     theme = {
       package = pkgs.dracula-theme;
@@ -103,9 +104,10 @@
       dota = "steam steam://rungameid/570";
     };
     functions = {
+      my_audio_notify.body   = "dunstify -t 500 -i volume \"Vol: $(pulsemixer --get-volume)\"";
       my_audio_mute.body     = "pulsemixer --toggle-mute";
-      my_audio_up.body       = "pulsemixer --change-volume +1";
-      my_audio_down.body     = "pulsemixer --change-volume -1";
+      my_audio_up.body       = "pulsemixer --change-volume +1\nmy_audio_notify";
+      my_audio_down.body     = "pulsemixer --change-volume -1\nmy_audio_notify";
       my_launcher.body       = "sway-launcher-desktop";
       my_locker.body         = "swaylock";
       my_file_manager.body   = "ranger";

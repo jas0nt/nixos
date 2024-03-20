@@ -235,10 +235,13 @@
     nmap
     wl-clipboard
 
-    where-is-my-sddm-theme
+    feh
+    i3lock-fancy
+    shutter  # screenshot
     hyprpaper swww waypaper
-    picom
     swaylock
+    where-is-my-sddm-theme
+    picom
     pasystray pulsemixer pwvucontrol # audio control #pavucontrol 
     timg qview cinnamon.pix nomacs # image viewer
     kitty
