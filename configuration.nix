@@ -186,7 +186,7 @@
       enable = true;
       locker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy -gp";
       nowlocker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy -gp";
-      time = 5;
+      time = 15;
     };
   };
 
