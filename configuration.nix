@@ -183,9 +183,9 @@
     };
 
     xautolock = {
-      enable = false;
-      locker = "${pkgs.swaylock}/bin/swaylock";
-      nowlocker = "${pkgs.swaylock}/bin/swaylock";
+      enable = true;
+      locker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy -gp";
+      nowlocker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy -gp";
       time = 5;
     };
   };
