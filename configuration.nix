@@ -244,6 +244,7 @@
     picom
     pasystray pulsemixer pwvucontrol # audio control #pavucontrol 
     timg qview cinnamon.pix nomacs # image viewer
+    clash-meta
     kitty
     eww
 
@@ -276,7 +277,6 @@
     dmenu
     firefox-bin
     pcmanfm
-    clash-meta
     networkmanagerapplet
     grimblast  # screenshot
     nwg-look
