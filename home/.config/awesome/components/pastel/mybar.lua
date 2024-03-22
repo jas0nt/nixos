@@ -55,7 +55,7 @@ mybar.create = function(s)
             layout = wibox.layout.fixed.horizontal,
             cmus_widget {
                 space = 5,
-                timeout = 5,
+                timeout = 10,
             },
             vertical_sep,
             wibox.layout.margin(wibox.widget.systray(), dpi(0.1), dpi(0.1), dpi(0.1), dpi(0.1)),
