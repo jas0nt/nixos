@@ -130,26 +130,6 @@ function rules.create(clientkeys, clientbuttons)
          properties = { screen = 1, tag = "9", switchtotag = true }
       },
 
-      -- Visualizer
-      {
-         rule_any = { name = { "cava" } },
-         properties = {
-            floating = true,
-            maximized_horizontal = true,
-            sticky = true,
-            ontop = false,
-            skip_taskbar = true,
-            below = true,
-            focusable = false,
-            height = screen_height * 0.40,
-            opacity = 0.6
-         },
-         callback = function(c)
-            decorations.hide(c)
-            awful.placement.bottom(c)
-         end
-      },
-
       -- File chooser dialog
       {
          rule_any = { role = { "GtkFileChooserDialog" } },
