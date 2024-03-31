@@ -18,8 +18,18 @@
   nix.settings.substituters = ["https://mirrors.ustc.edu.cn/nix-channels/store"];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+    };
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      theme = /etc/nixos/sekiro_grub_theme;
+    };
+  };
 
   # Enable networking
   networking = {
