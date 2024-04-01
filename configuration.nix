@@ -221,7 +221,8 @@
 
     git = {
       enable = true;
-      config.credential.helper = "libsecret";
+      package = pkgs.gitFull;
+      config.credential.helper = "store";
     };
 
     fish.enable = true;
