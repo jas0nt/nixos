@@ -28,6 +28,7 @@
       efiSupport = true;
       device = "nodev";
       theme = /etc/nixos/sekiro_grub_theme;
+      splashImage = /etc/nixos/sekiro_grub_theme/sekiro_2560x1440.png;
     };
   };
 
