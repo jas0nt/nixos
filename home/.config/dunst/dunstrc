@@ -7,7 +7,7 @@ corner_radius=15
 width=400
 height=300
 origin="bottom-right"
-offset="10x20"
+offset="15x30"
 
 gap_size=10
 gaps="yes"

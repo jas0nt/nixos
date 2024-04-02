@@ -148,7 +148,7 @@
 
   home.file = {
     # fcitx5 & rime
-    ".local/share/fcitx5/themes/transparent-green"                         = { recursive = true; source = .local/share/fcitx5/themes/transparent-green; };
+    ".local/share/fcitx5/themes/dracula"                                   = { recursive = true; source = .local/share/fcitx5/themes/dracula; };
     ".config/fcitx5/conf/classicui.conf".source                            = .config/fcitx5/conf/classicui.conf;
     ".local/share/fcitx5/rime/default.custom.yaml".source                  = .local/share/fcitx5/rime/default.custom.yaml;
     ".local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml".source      = .local/share/fcitx5/rime/double_pinyin_flypy.schema.yaml;
