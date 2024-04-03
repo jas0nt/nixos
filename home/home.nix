@@ -57,6 +57,7 @@
     emacs librime emacsPackages.rime
     vscode-fhs
     lunarvim
+    nixfmt
 
     sway-launcher-desktop
     calcure

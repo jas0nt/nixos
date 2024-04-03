@@ -5,25 +5,23 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      # sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
-      # sudo nix-channel --update
-      # nix-shell '<home-manager>' -A install
-      <home-manager/nixos>
-    ];
+    # sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+    # sudo nix-channel --update
+    # nix-shell '<home-manager>' -A install
+    <home-manager/nixos>
+  ];
 
   # mirror
-  nix.settings.substituters = ["https://mirrors.ustc.edu.cn/nix-channels/store"];
+  nix.settings.substituters =
+    [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
   boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-    };
+    efi = { canTouchEfiVariables = true; };
     grub = {
       enable = true;
       efiSupport = true;
@@ -41,8 +39,8 @@
     # proxy.allProxy = "socks5://127.0.0.1:7890";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
     firewall = {
-        enable = false;
-        allowedTCPPorts = [ 8080 ];
+      enable = false;
+      allowedTCPPorts = [ 8080 ];
     };
     # extraHosts =
     #   ''
@@ -56,17 +54,17 @@
     pulseaudio.enable = false;
   };
 
-  security.rtkit.enable = true;  # PulseAudio uses this
+  security.rtkit.enable = true; # PulseAudio uses this
   sound.enable = true;
 
   services = {
     blueman.enable = true;
-    openssh.enable = true;  # Enable the OpenSSH daemon.
+    openssh.enable = true; # Enable the OpenSSH daemon.
     devmon.enable = true;
-    gvfs.enable = true; 
+    gvfs.enable = true;
     udisks2.enable = true;
-    printing.enable = true;  # Enable CUPS to print documents.
-    pipewire = {  # Enable sound with pipewire.
+    printing.enable = true; # Enable CUPS to print documents.
+    pipewire = { # Enable sound with pipewire.
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
@@ -86,8 +84,22 @@
     font = "${pkgs.terminus_font}/share/consolefonts/ter-114n.psf.gz";
     keyMap = "us";
     colors = [
-        "282a36" "ff5555" "50fa7b" "f1fa8c" "bd93f9" "ff79c6" "8be9fd" "f8f8f2"
-        "6272a4" "ff7777" "70fa9b" "ffb86c" "cfa9ff" "ff88e8" "97e2ff" "ffffff"
+      "282a36"
+      "ff5555"
+      "50fa7b"
+      "f1fa8c"
+      "bd93f9"
+      "ff79c6"
+      "8be9fd"
+      "f8f8f2"
+      "6272a4"
+      "ff7777"
+      "70fa9b"
+      "ffb86c"
+      "cfa9ff"
+      "ff88e8"
+      "97e2ff"
+      "ffffff"
     ];
   };
 
@@ -111,21 +123,19 @@
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-rime
-    ];
+    fcitx5.addons = with pkgs; [ fcitx5-rime ];
   };
 
   fonts = {
     enableDefaultPackages = true;
-    packages = with pkgs; [ 
-      wqy_zenhei  #steam font
+    packages = with pkgs; [
+      wqy_zenhei # steam font
       nerdfonts
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
     ];
-  
+
     fontconfig = {
       defaultFonts = {
         serif = [
@@ -146,10 +156,7 @@
           "NotoMono Nerd Font"
           "Noto Sans CJK"
         ];
-        emoji = [
-          "Apple Color Emoji"
-          "Noto Color Emoji"
-        ];
+        emoji = [ "Apple Color Emoji" "Noto Color Emoji" ];
       };
     };
   };
@@ -176,9 +183,9 @@
       autoLogin.enable = true;
       autoLogin.user = "jason";
       sddm = {
-          enable = true;
-          theme = "where_is_my_sddm_theme";
-          wayland.enable = false;
+        enable = true;
+        theme = "where_is_my_sddm_theme";
+        wayland.enable = false;
       };
       # defaultSession = "hyprland";
       # setupCommands = "Hyprland";
@@ -202,7 +209,7 @@
     };
   };
 
-  security.pam.services.swaylock.fprintAuth = false;  # Fix swaylock
+  security.pam.services.swaylock.fprintAuth = false; # Fix swaylock
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -229,8 +236,10 @@
 
     steam = {
       enable = true;
-      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      remotePlay.openFirewall =
+        true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall =
+        true; # Open ports in the firewall for Source Dedicated Server
     };
   };
 
@@ -239,64 +248,78 @@
     wlr.enable = true;
   };
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     libGL
-
-    xwayland
-    qt6.qtwayland
     killall
-    gnumake libgccjit cmake
+    gnumake
+    libgccjit
+    cmake
     openssl
     nmap
-    xclip wl-clipboard
 
-    feh
-    i3lock-fancy
-    shutter  # screenshot
-    hyprpaper swww waypaper
-    swaylock
     where-is-my-sddm-theme
+    feh
+    hyprpaper
     picom
-    pasystray pulsemixer pwvucontrol # audio control #pavucontrol 
-    timg qview cinnamon.pix nomacs # image viewer
+    i3lock-fancy
+    swaylock
+    shutter # screenshot
+    grimblast # screenshot wayland
+    pasystray
+    pulsemixer
+    pwvucontrol # audio control #pavucontrol
     clash-meta
-    kitty
-    eww
+    xclip
+    wl-clipboard
 
     # Modern unix tools
-    btop htop bottom glances # top
+    btop
+    htop
+    bottom
+    glances
     bat # cat
     choose # cut
-    du-dust dua # du
+    du-dust
+    dua # du
     duf # df
     eza # ls
     fd # find
     httpie # curl
     procs # ps
     ripgrep # grep
-    jq fx # json
+    jq
+    fx # json
     tree
     cht-sh
-    tmux byobu
+    tmux
+    byobu
     neofetch
-    cava genact lolcat nms
+    cava
+    genact
+    lolcat
+    nms
     systemctl-tui
     bluetuith
-    lazygit tig
+    lazygit
+    tig
     vim
     wget
     ranger
-    unzip p7zip
+    unzip
+    p7zip
 
+    # GUI apps
+    kitty
+    qview
+    cinnamon.pix
+    nomacs
     rofi
     dmenu
     firefox-bin
     pcmanfm
     networkmanagerapplet
-    grimblast  # screenshot
     nwg-look
   ];
 
@@ -313,7 +336,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 
   # home-manager
   users.users.jason = {
