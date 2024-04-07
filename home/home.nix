@@ -72,7 +72,6 @@
     qbittorrent motrix aria2
     localsend libsForQt5.kdeconnect-kde
     quickemu
-    telegram-desktop
     obs-studio
   ];
 
