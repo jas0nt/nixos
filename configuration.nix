@@ -274,6 +274,7 @@
     clash-meta
     xclip
     wl-clipboard
+    freerdp
 
     # Modern unix tools
     btop
