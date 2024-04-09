@@ -77,7 +77,6 @@
 
   programs = {
     home-manager.enable = true;
-    neovim.enable = true;
   };
 
   programs.git = {
@@ -168,6 +167,8 @@
     ".config/mimeapps.list".source                                         = .config/mimeapps.list;
     ".config/picom.conf".source                                            = .config/picom.conf;
     ".config/cava/config".source                                           = .config/cava/config;
+
+    ".config/lvim/config.lua".source                                       = .config/lvim/config.lua;
 
   };
 }
