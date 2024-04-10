@@ -73,6 +73,7 @@
     localsend libsForQt5.kdeconnect-kde
     quickemu
     obs-studio
+    puddletag # mp3 tag editor
   ];
 
   programs = {
