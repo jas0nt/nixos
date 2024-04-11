@@ -131,33 +131,25 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       wqy_zenhei # steam font
-      nerdfonts
-      noto-fonts
-      noto-fonts-cjk
+      # nerdfonts
+      fira-code-nerdfont
+      noto-fonts-cjk-serif
+      noto-fonts-cjk-sans
       noto-fonts-emoji
     ];
 
     fontconfig = {
       defaultFonts = {
         serif = [
-          "SF Pro"
-          "FiraCode Nerd Font"
-          "NotoSerif Nerd Font"
-          "Noto Sans CJK"
+          "Noto Serif CJK SC"
         ];
         sansSerif = [
-          "SF Pro"
-          "FiraCode Nerd Font"
-          "NotoSans Nerd Font"
-          "Noto Sans CJK"
+          "Noto Sans CJK SC"
         ];
         monospace = [
-          "SF Mono"
           "FiraCode Nerd Font"
-          "NotoMono Nerd Font"
-          "Noto Sans CJK"
         ];
-        emoji = [ "Apple Color Emoji" "Noto Color Emoji" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };
