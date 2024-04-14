@@ -15,6 +15,7 @@
     <home-manager/nixos>
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # mirror
   nix.settings.substituters =
     [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
